@@ -1,0 +1,633 @@
+<Export>
+  <ExportedSequences>
+    <Sequence>
+      <Id>0</Id>
+      <Name>PassFailOptInForm_SEQUENCE</Name>
+      <Url></Url>
+      <Title>PassFailOptInForm</Title>
+      <Description></Description>
+      <WorkflowDefinitionId>0</WorkflowDefinitionId>
+      <IsAnonymous>false</IsAnonymous>
+      <EndStateForm>PassFailOptInForm_End</EndStateForm>
+      <AuthenticationProduct>Student</AuthenticationProduct>
+      <KendoTheme>Silver</KendoTheme>
+      <BootstrapTheme>Post Boot Strap</BootstrapTheme>
+      <CustomTheme>PostTheme</CustomTheme>
+      <NavigationButtonsPosition>0</NavigationButtonsPosition>
+      <Role>Student</Role>
+      <Header></Header>
+      <Footer></Footer>
+      <AutoLogout>false</AutoLogout>
+      <OriginalState>H4sIAAAAAAAEAD3MQQrCMBAAwK9I7mZTeysqeFbpoSJel5C0C01Ssisxvl6s4ANm9qecsfb+7Ood56frPUumOGKst7q4zSvMkQ9qElk6ALaTC8g6kM2JkxdtU4CdMS00BgaXCWd6o1CKsMasfkNH/6OUokurUx6/sIHH9TKs7ZYiC0brFBw/juQnSpcAAAA=</OriginalState>
+      <SecureState>H4sIAAAAAAAEAD3MQQrCMBAAwK9I7mZTeysqeFbpoSJel5C0C01Ssisxvl6s4ANm9qecsfb+7Ood56frPUumOGKst7q4zSvMkQ9qElk6ALaTC8g6kM2JkxdtU4CdMS00BgaXCWd6o1CKsMasfkNH/6OUokurUx6/sIHH9TKs7ZYiC0brFBw/juQnSpcAAAA=</SecureState>
+      <EntityState>0</EntityState>
+    </Sequence>
+    <Forms>
+      <Id>0</Id>
+      <Name>PassFailOptInForm</Name>
+      <Title></Title>
+      <Description></Description>
+      <Json>{"name":"PassFailOptInForm","title":"","description":"","id":1060,"formsections":[{"columns":[[{"ControlType":"HTML","ModuleName":null,"EntityName":null,"EntityNavigationalName":null,"EntityDisplayName":null,"Name":null,"DisplayName":"HTML","FullName":"..","ParentEntityName":null,"IsNavigation":false,"NavigationProperties":[],"ControlProperties":[{"Name":"ControlType","DisplayName":"Control Type","Value":"HTML","IsEditable":false,"IsVisible":true,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Uuid","DisplayName":"Uuid","Value":"f97c21a8-d5ec-1083-20dc-b01861835729","IsEditable":false,"IsVisible":false,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Class","DisplayName":"Class","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"HTML","DisplayName":"HTML","Value":"&lt;h2&gt;&lt;center&gt; Pass/Fail Grading Opt-In Form&lt;/center&gt;&lt;/h2&gt;&lt;h2&gt;&lt;center&gt;\nEffective for 2020 Spring Semester and Term 5 Courses\n&lt;/center&gt;&lt;/h2&gt;","IsEditable":true,"IsVisible":true,"EditType":"TextArea","EditDropdownListValues":null,"EditQuery":null},{"Name":"Id","DisplayName":"Id","Value":"id09761690-c160-db53-4df3-b30bccd92c80","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Visible","DisplayName":"Visible","Value":"true","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null}],"CustomProperty":false,"CustomPropertyKey":null,"ClrType":null,"IsEnabled":true,"SublayoutTypes":"P,R","NumberOfColumnsSpanned":0,"SublayoutTypesArray":["P","R"],"index":11,"uuid":"f97c21a8-d5ec-1083-20dc-b01861835729"},{"ControlType":"HTML","ModuleName":null,"EntityName":null,"EntityNavigationalName":null,"EntityDisplayName":null,"Name":null,"DisplayName":"HTML","FullName":"..","ParentEntityName":null,"IsNavigation":false,"NavigationProperties":[],"ControlProperties":[{"Name":"ControlType","DisplayName":"Control Type","Value":"HTML","IsEditable":false,"IsVisible":true,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Uuid","DisplayName":"Uuid","Value":"a7b66822-e6ad-4d23-98c2-ebb384c3f5f5","IsEditable":false,"IsVisible":false,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Class","DisplayName":"Class","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"HTML","DisplayName":"HTML","Value":"&lt;h3&gt;Post University is offering a Pass/Fail grading option for courses offered in Spring Semester 2020 and Term 5 2020.  Students should speak with their Academic Success Counselor/Academic Advisor and/or SAP Specialist before completing this form.&lt;b&gt; Students must submit the Pass/Fail Opt-In form by April 29, 2020. &lt;/b&gt;&lt;h3&gt;","IsEditable":true,"IsVisible":true,"EditType":"TextArea","EditDropdownListValues":null,"EditQuery":null},{"Name":"Id","DisplayName":"Id","Value":"id86d87a38-07c3-39d1-4111-94c3e30c6f4b","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Visible","DisplayName":"Visible","Value":"true","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null}],"CustomProperty":false,"CustomPropertyKey":null,"ClrType":null,"IsEnabled":true,"SublayoutTypes":"P,R","NumberOfColumnsSpanned":0,"SublayoutTypesArray":["P","R"],"index":11,"uuid":"a7b66822-e6ad-4d23-98c2-ebb384c3f5f5"}]],"uuid":"8f42040a-b284-ac38-73e5-049c023f4d86","formSectionId":"id4c29d27b-bb9e-1deb-e3cf-e828ed6ea96a","mergeWithNext":false,"mergeWithPrevious":false,"isVisible":"true","title":"","description":"","cssClass":"","spanDefinitions":[{"NumberOfColumnsSpanned":12,"CanIncreaseSpan":false,"CanDecreaseSpan":true}]},{"columns":[[{"ControlType":"Text","ModuleName":null,"EntityName":null,"EntityNavigationalName":null,"EntityDisplayName":null,"Name":null,"DisplayName":"Text Box","FullName":"..","ParentEntityName":null,"IsNavigation":false,"NavigationProperties":[],"ControlProperties":[{"Name":"ControlType","DisplayName":"Control Type","Value":"Text Box","IsEditable":false,"IsVisible":true,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Uuid","DisplayName":"Uuid","Value":"22c1429d-f8ce-ecb5-7152-17563c43d16b","IsEditable":false,"IsVisible":false,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Class","DisplayName":"Class","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Disabled","DisplayName":"Disabled","Value":"true","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Id","DisplayName":"Id","Value":"ide3b1816d-fcc7-6d32-dda4-2585e67ba78e","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"DisplayName","DisplayName":"Label","Value":"Student Name","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"MaximumLength","DisplayName":"Max Length","Value":"50","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"NumberMaximumValue","DisplayName":"Maximum Value","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"MinimumLength","DisplayName":"Min Length","Value":"1","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"NumberMinimumValue","DisplayName":"Minimum Value","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Model","DisplayName":"Model","Value":"vm.models.studentName","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Placeholder","DisplayName":"Placeholder","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Editable","DisplayName":"Read-only","Value":"false","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Required","DisplayName":"Required","Value":"false","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"RequiredMessage","DisplayName":"Required Message","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"TabIndex","DisplayName":"Tab Index","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Description","DisplayName":"Tooltip","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"TooltipDuration","DisplayName":"Tooltip Duration","Value":"750","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"InputType","DisplayName":"Type","Value":"text","IsEditable":true,"IsVisible":true,"EditType":"DropdownList","EditDropdownListValues":"text,password,email,number,url","EditQuery":null},{"Name":"Visible","DisplayName":"Visible","Value":"true","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null}],"CustomProperty":false,"CustomPropertyKey":null,"ClrType":null,"IsEnabled":true,"SublayoutTypes":"P,R","NumberOfColumnsSpanned":0,"SublayoutTypesArray":["P","R"],"index":26,"uuid":"22c1429d-f8ce-ecb5-7152-17563c43d16b"},{"ControlProperties":[{"Name":"ControlType","DisplayName":"Control Type","Value":"Text Box","IsEditable":false,"IsVisible":true,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Uuid","DisplayName":"Uuid","Value":"41870551-02b1-a2b0-691d-7654cc66b74f","IsEditable":false,"IsVisible":false,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Class","DisplayName":"Class","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Disabled","DisplayName":"Disabled","Value":"true","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Id","DisplayName":"Id","Value":"StudentEntityStudentNumber","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"DisplayName","DisplayName":"Label","Value":"Student Number","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"MaximumLength","DisplayName":"Max Length","Value":"10","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"NumberMaximumValue","DisplayName":"Maximum Value","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"MinimumLength","DisplayName":"Min Length","Value":"1","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"NumberMinimumValue","DisplayName":"Minimum Value","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Model","DisplayName":"Model","Value":"vm.models.studentEntity.StudentNumber","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Placeholder","DisplayName":"Placeholder","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Editable","DisplayName":"Read-only","Value":"false","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Required","DisplayName":"Required","Value":"false","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"RequiredMessage","DisplayName":"Required Message","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"TabIndex","DisplayName":"Tab Index","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Description","DisplayName":"Tooltip","Value":"If your institution assigns student numbers, the number your institution uses to identify the student. How the number is assigned, is specified by your institution. For example, CampusNexus Student can be configured to assign the number or your institution can use some other method for assigning the ID.","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"TooltipDuration","DisplayName":"Tooltip Duration","Value":"750","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"InputType","DisplayName":"Type","Value":"text","IsEditable":true,"IsVisible":true,"EditType":"DropdownList","EditDropdownListValues":"text,password,email,number,url","EditQuery":null},{"Name":"Visible","DisplayName":"Visible","Value":"true","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null}],"ControlType":"Text","ClrType":"Cmc.Nexus.Common.Entities.StudentEntity, Cmc.Nexus.Common.Contracts","DisplayName":"Student Number","CustomProperty":false,"EntityDisplayName":"Student","EntityName":"StudentEntity","IsNavigation":false,"Name":"StudentNumber","NavigationPropertyContainers":[],"FirstPart":null,"SearchText":null,"LastPart":null,"index":65,"uuid":"41870551-02b1-a2b0-691d-7654cc66b74f"}]],"uuid":"aea2e0c7-6631-d860-d3b9-8036799f7398","formSectionId":"id54330dfc-76cc-bab6-2bc3-c212410fd238","mergeWithNext":false,"mergeWithPrevious":false,"isVisible":"true","title":"","description":"","cssClass":"","spanDefinitions":[{"NumberOfColumnsSpanned":12,"CanIncreaseSpan":false,"CanDecreaseSpan":true}]},{"columns":[[{"ControlType":"HTML","ModuleName":null,"EntityName":null,"EntityNavigationalName":null,"EntityDisplayName":null,"Name":null,"DisplayName":"HTML","FullName":"..","ParentEntityName":null,"IsNavigation":false,"NavigationProperties":[],"ControlProperties":[{"Name":"ControlType","DisplayName":"Control Type","Value":"HTML","IsEditable":false,"IsVisible":true,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Uuid","DisplayName":"Uuid","Value":"93388afc-e41e-ff58-44f8-6667433f55c7","IsEditable":false,"IsVisible":false,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Class","DisplayName":"Class","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"HTML","DisplayName":"HTML","Value":"","IsEditable":true,"IsVisible":true,"EditType":"TextArea","EditDropdownListValues":null,"EditQuery":null},{"Name":"Id","DisplayName":"Id","Value":"id7c570dc1-1a02-c2d1-9507-9be6ed7504c4","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Visible","DisplayName":"Visible","Value":"true","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null}],"CustomProperty":false,"CustomPropertyKey":null,"ClrType":null,"IsEnabled":true,"SublayoutTypes":"P,R","NumberOfColumnsSpanned":0,"SublayoutTypesArray":["P","R"],"index":11,"uuid":"93388afc-e41e-ff58-44f8-6667433f55c7"},{"ControlType":"Grid","ModuleName":null,"EntityName":null,"EntityNavigationalName":null,"EntityDisplayName":null,"Name":null,"DisplayName":"Grid","FullName":"..","ParentEntityName":null,"IsNavigation":false,"NavigationProperties":[],"ControlProperties":[{"Name":"ControlType","DisplayName":"Control Type","Value":"Grid","IsEditable":false,"IsVisible":true,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Uuid","DisplayName":"Uuid","Value":"7ef452ba-0486-6978-2f4a-28aac48be5de","IsEditable":false,"IsVisible":false,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"GridAddRecordMessage","DisplayName":"Add Message","Value":"Add New Record","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Class","DisplayName":"Class","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"GridColumns","DisplayName":"Columns","Value":"{\"columnData\":[{\"field\":\"CourseNumber\",\"title\":\"Course Number\",\"dataType\":\"string\",\"isRequired\":false,\"sortable\":false,\"canEdit\":true,\"filterable\":false,\"dropdownListStorage\":{}},{\"field\":\"CourseName\",\"title\":\"Course Name\",\"dataType\":\"string\",\"isRequired\":false,\"sortable\":false,\"canEdit\":true,\"filterable\":false,\"dropdownListStorage\":{}},{\"field\":\"Term\",\"title\":\"Term 5 or Spring Semester\",\"dataType\":\"string\",\"isRequired\":false,\"sortable\":false,\"canEdit\":true,\"filterable\":false,\"dropdownListStorage\":{}}],\"isEditable\":true,\"isAddable\":false,\"isDeletable\":false,\"typeOfEditor\":\"incell\",\"addLocation\":\"bottom\",\"schemaIdName\":\"Id\"}","IsEditable":true,"IsVisible":true,"EditType":"Button","EditDropdownListValues":null,"EditQuery":null},{"Name":"GridFilterable","DisplayName":"Filterable","Value":"false","IsEditable":true,"IsVisible":true,"EditType":"Checkbox","EditDropdownListValues":null,"EditQuery":null},{"Name":"Id","DisplayName":"Id","Value":"id9c39f2ef-e995-2d62-159d-44c0cfe72067","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"GridModel","DisplayName":"Model","Value":"vm.models.CourseGrid","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"GridModelInitialData","DisplayName":"Model Data","Value":"","IsEditable":true,"IsVisible":true,"EditType":"TextArea","EditDropdownListValues":null,"EditQuery":null},{"Name":"GridOdataQuery","DisplayName":"OData Query","Value":"","IsEditable":true,"IsVisible":true,"EditType":"TextArea","EditDropdownListValues":null,"EditQuery":null},{"Name":"GridPageSize","DisplayName":"Page Size","Value":"20","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"GridPageable","DisplayName":"Pageable","Value":"false","IsEditable":true,"IsVisible":true,"EditType":"Checkbox","EditDropdownListValues":null,"EditQuery":null},{"Name":"ProductName","DisplayName":"Product","Value":"Student","IsEditable":true,"IsVisible":true,"EditType":"DropdownList","EditDropdownListValues":"CRM,Occupation Insight,Student","EditQuery":null},{"Name":"GridSortable","DisplayName":"Sortable","Value":"false","IsEditable":true,"IsVisible":true,"EditType":"Checkbox","EditDropdownListValues":null,"EditQuery":null},{"Name":"TabIndex","DisplayName":"Tab Index","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Visible","DisplayName":"Visible","Value":"true","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null}],"CustomProperty":false,"CustomPropertyKey":null,"ClrType":null,"IsEnabled":true,"SublayoutTypes":"P","NumberOfColumnsSpanned":0,"SublayoutTypesArray":["P"],"index":10,"uuid":"7ef452ba-0486-6978-2f4a-28aac48be5de"}]],"uuid":"77c3e83a-8da2-4b76-3eba-a7890ae2ed73","formSectionId":"idff905997-a79c-8ca5-6461-2478976b3ca9","mergeWithNext":false,"mergeWithPrevious":false,"isVisible":"true","title":"","description":"","cssClass":"","spanDefinitions":[{"NumberOfColumnsSpanned":12,"CanIncreaseSpan":false,"CanDecreaseSpan":true}]},{"columns":[[{"ControlType":"HTML","ModuleName":null,"EntityName":null,"EntityNavigationalName":null,"EntityDisplayName":null,"Name":null,"DisplayName":"HTML","FullName":"..","ParentEntityName":null,"IsNavigation":false,"NavigationProperties":[],"ControlProperties":[{"Name":"ControlType","DisplayName":"Control Type","Value":"HTML","IsEditable":false,"IsVisible":true,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Uuid","DisplayName":"Uuid","Value":"c9751a00-ff6b-bc33-64d3-06a54bb4e3a0","IsEditable":false,"IsVisible":false,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Class","DisplayName":"Class","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"HTML","DisplayName":"HTML","Value":"&lt;h3&gt;I am requesting that the Pass/Fail grading schema is used for the courses listed above.  I have spoken with my ASC/Program Chair and I understand this request means that my earned letter grade for the course(s) listed above will not appear on my transcript, and that the following parameters apply:&lt;h3&gt;&lt;h3&gt;\n&lt;b&gt;•&lt;/b&gt;\tUndergraduate Students: Undergraduate students who earn a 60% or higher in the course will be assigned a grade of Pass (P), which will not impact GPA.  Undergraduate students who earn less than a 60% in their course will earn a Fail (F), which will impact GPA.  For Term 5 ADP students, the grade of UF will remain unchanged and should be assigned to students who have not participated since Week 4. &lt;/h3&gt;\n&lt;h3&gt;&lt;b&gt;•&lt;/b&gt;\tGraduate Students: Graduate students who earn a 70% or higher in the course will be assigned a grade of Pass (P), which will not impact GPA.  Graduate students who earn less than 70% in their course will earn a Fail (F), which will impact GPA.  For Term 5 ADP students, the grade of UF will remain unchanged and should be assigned to students who have not participated since Week 4.&lt;/h3&gt;","IsEditable":true,"IsVisible":true,"EditType":"TextArea","EditDropdownListValues":null,"EditQuery":null},{"Name":"Id","DisplayName":"Id","Value":"id7f63a8a0-f33b-b78f-f2ce-5cfd1edcae3e","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Visible","DisplayName":"Visible","Value":"true","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null}],"CustomProperty":false,"CustomPropertyKey":null,"ClrType":null,"IsEnabled":true,"SublayoutTypes":"P,R","NumberOfColumnsSpanned":0,"SublayoutTypesArray":["P","R"],"index":11,"uuid":"c9751a00-ff6b-bc33-64d3-06a54bb4e3a0"}]],"uuid":"2c015acc-5501-0e00-d6a0-9b5fad2d505d","formSectionId":"id043550ff-2358-9714-50f0-b6efb16c2185","mergeWithNext":false,"mergeWithPrevious":false,"isVisible":"true","title":"","description":"","cssClass":"","spanDefinitions":[{"NumberOfColumnsSpanned":12,"CanIncreaseSpan":false,"CanDecreaseSpan":true}]},{"columns":[[{"ControlType":"MaskedTextBox","ModuleName":null,"EntityName":null,"EntityNavigationalName":null,"EntityDisplayName":null,"Name":null,"DisplayName":"Masked Text Box","FullName":"..","ParentEntityName":null,"IsNavigation":false,"NavigationProperties":[],"ControlProperties":[{"Name":"ControlType","DisplayName":"Control Type","Value":"Masked Text Box","IsEditable":false,"IsVisible":true,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Uuid","DisplayName":"Uuid","Value":"8fbe2884-f07d-f5d2-a64c-e7b3c1298d2e","IsEditable":false,"IsVisible":false,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Class","DisplayName":"Class","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Disabled","DisplayName":"Disabled","Value":"false","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"MaskFormat","DisplayName":"Format","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Id","DisplayName":"Id","Value":"id60429e0e-8940-4050-571a-997cf2c75059","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"DisplayName","DisplayName":"Label","Value":"Student Signature","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Model","DisplayName":"Model","Value":"vm.models.signature","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Placeholder","DisplayName":"Placeholder","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Editable","DisplayName":"Read-only","Value":"false","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Required","DisplayName":"Required","Value":"false","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"RequiredMessage","DisplayName":"Required Message","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"TabIndex","DisplayName":"Tab Index","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Description","DisplayName":"Tooltip","Value":"Signature","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"TooltipDuration","DisplayName":"Tooltip Duration","Value":"750","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"MaskPatternMessage","DisplayName":"Validation Message","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"MaskPattern","DisplayName":"Validation Regex","Value":"","IsEditable":true,"IsVisible":true,"EditType":"TextArea","EditDropdownListValues":null,"EditQuery":null},{"Name":"Visible","DisplayName":"Visible","Value":"true","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null}],"CustomProperty":false,"CustomPropertyKey":null,"ClrType":null,"IsEnabled":true,"SublayoutTypes":"P,R","NumberOfColumnsSpanned":0,"SublayoutTypesArray":["P","R"],"index":17,"uuid":"8fbe2884-f07d-f5d2-a64c-e7b3c1298d2e"}]],"uuid":"56c5f0e3-53e5-5297-0f84-e615ff6c8546","formSectionId":"idb1761483-c62c-1d10-6e2e-9632bfab4c2f","mergeWithNext":false,"mergeWithPrevious":false,"isVisible":"true","title":"","description":"","cssClass":"","spanDefinitions":[{"NumberOfColumnsSpanned":12,"CanIncreaseSpan":false,"CanDecreaseSpan":true}]},{"columns":[[{"ControlType":"Date","ModuleName":null,"EntityName":null,"EntityNavigationalName":null,"EntityDisplayName":null,"Name":null,"DisplayName":"Date Picker","FullName":"..","ParentEntityName":null,"IsNavigation":false,"NavigationProperties":[],"ControlProperties":[{"Name":"ControlType","DisplayName":"Control Type","Value":"Date Picker","IsEditable":false,"IsVisible":true,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Uuid","DisplayName":"Uuid","Value":"a5c2a2a4-0dbe-130c-8306-8a5682751e19","IsEditable":false,"IsVisible":false,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Class","DisplayName":"Class","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"DisableTyping","DisplayName":"Disable Input Text","Value":"false","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Disabled","DisplayName":"Disabled","Value":"true","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Format","DisplayName":"Format","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Id","DisplayName":"Id","Value":"idb2e76d67-cbe6-79f6-2c51-44aa4670bb43","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"IgnoreTime","DisplayName":"Ignore Time","Value":"false","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"DisplayName","DisplayName":"Label","Value":"Date","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"DateMaximumValue","DisplayName":"Maximum Value","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"DateMinimumValue","DisplayName":"Minimum Value","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Model","DisplayName":"Model","Value":"vm.models.initialsDate","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Editable","DisplayName":"Read-only","Value":"true","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Required","DisplayName":"Required","Value":"false","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"RequiredMessage","DisplayName":"Required Message","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"TabIndex","DisplayName":"Tab Index","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Description","DisplayName":"Tooltip","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"TooltipDuration","DisplayName":"Tooltip Duration","Value":"750","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Visible","DisplayName":"Visible","Value":"true","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null}],"CustomProperty":false,"CustomPropertyKey":null,"ClrType":null,"IsEnabled":true,"SublayoutTypes":"P,R","NumberOfColumnsSpanned":0,"SublayoutTypesArray":["P","R"],"index":4,"uuid":"a5c2a2a4-0dbe-130c-8306-8a5682751e19"}]],"uuid":"ef00507d-047f-40a9-193f-c1e49f3e5d04","formSectionId":"id6edad3d1-3ee5-3d9e-81e2-71a38c458666","mergeWithNext":false,"mergeWithPrevious":false,"isVisible":"true","title":"","description":"","cssClass":"","spanDefinitions":[{"NumberOfColumnsSpanned":12,"CanIncreaseSpan":false,"CanDecreaseSpan":true}]}],"isEndState":false,"includeInViewSummary":true,"cssClass":"","formId":"id2db634e4-cb85-7792-f0da-de2d21d9ea39","uuid":"c6e98d6d-ceba-5290-6a38-4ec4a0aa5a08"}</Json>
+      <Html>&lt;div id="id4c29d27b-bb9e-1deb-e3cf-e828ed6ea96a" ng-show="true" class="panel panel-default"&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col-xs-12 col-sm-12 col-md-12"&gt;&lt;div id="id09761690-c160-db53-4df3-b30bccd92c80" ng-show="true" class="form-group  cmc-div-htmlpage"&gt;
+    &lt;h2&gt;&lt;center&gt; Pass/Fail Grading Opt-In Form&lt;/center&gt;&lt;/h2&gt;&lt;h2&gt;&lt;center&gt;
+Effective for 2020 Spring Semester and Term 5 Courses
+&lt;/center&gt;&lt;/h2&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col-xs-12 col-sm-12 col-md-12"&gt;&lt;div id="id86d87a38-07c3-39d1-4111-94c3e30c6f4b" ng-show="true" class="form-group  cmc-div-htmlpage"&gt;
+    &lt;h3&gt;Post University is offering a Pass/Fail grading option for courses offered in Spring Semester 2020 and Term 5 2020.  Students should speak with their Academic Success Counselor/Academic Advisor and/or SAP Specialist before completing this form.&lt;b&gt; Students must submit the Pass/Fail Opt-In form by April 29, 2020. &lt;/b&gt;&lt;h3&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="id54330dfc-76cc-bab6-2bc3-c212410fd238" ng-show="true" class="panel panel-default"&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col-xs-12 col-sm-12 col-md-12"&gt;&lt;div ng-show="true" class="form-group cmc-div-textbox"&gt;
+    &lt;cmc-input-text 
+        cmc-id="ide3b1816d-fcc7-6d32-dda4-2585e67ba78e" 
+        cmc-model="vm.models.studentName" 
+        cmc-class="" 
+        cmc-disabled="true" 
+        cmc-visible="true" 
+        cmc-label="{{ 'Student Name' | translate }}" 
+        cmc-input-type="'text'"
+        cmc-tooltip="" 
+        cmc-tooltip-duration="750"
+        cmc-required="false" 
+        cmc-tab-index=""
+        cmc-required-message="" 
+        cmc-readonly="false" 
+        cmc-min-length="1" 
+        cmc-max-length="50"
+        cmc-min=""
+        cmc-max=""
+        cmc-ref="vm.controlRefs.values['ide3b1816d-fcc7-6d32-dda4-2585e67ba78e']"
+        cmc-change="vm.textBoxChange(payload)"
+        cmc-blur="vm.textBoxBlur(payload)"
+        cmc-place-holder=""&gt;
+    &lt;/cmc-input-text&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col-xs-12 col-sm-12 col-md-12"&gt;&lt;div ng-show="true" class="form-group cmc-div-textbox"&gt;
+    &lt;cmc-input-text 
+        cmc-id="StudentEntityStudentNumber" 
+        cmc-model="vm.models.studentEntity.StudentNumber" 
+        cmc-class="" 
+        cmc-disabled="true" 
+        cmc-visible="true" 
+        cmc-label="{{ 'Student Number' | translate }}" 
+        cmc-input-type="'text'"
+        cmc-tooltip="{{ 'If your institution assigns student numbers, the number your institution uses to identify the student. How the number is assigned, is specified by your institution. For example, CampusNexus Student can be configured to assign the number or your institution can use some other method for assigning the ID.' | translate }}" 
+        cmc-tooltip-duration="750"
+        cmc-required="false" 
+        cmc-tab-index=""
+        cmc-required-message="" 
+        cmc-readonly="false" 
+        cmc-min-length="1" 
+        cmc-max-length="10"
+        cmc-min=""
+        cmc-max=""
+        cmc-ref="vm.controlRefs.values['StudentEntityStudentNumber']"
+        cmc-change="vm.textBoxChange(payload)"
+        cmc-blur="vm.textBoxBlur(payload)"
+        cmc-place-holder=""&gt;
+    &lt;/cmc-input-text&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="idff905997-a79c-8ca5-6461-2478976b3ca9" ng-show="true" class="panel panel-default"&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col-xs-12 col-sm-12 col-md-12"&gt;&lt;div id="id7c570dc1-1a02-c2d1-9507-9be6ed7504c4" ng-show="true" class="form-group  cmc-div-htmlpage"&gt;
+    
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col-xs-12 col-sm-12 col-md-12"&gt;&lt;div ng-show="true" class="form-group  cmc-div-grid"&gt;
+    &lt;fb-grid 
+        k-scope-field="id9c39f2ef-e995-2d62-159d-44c0cfe72067"
+        fb-id="id9c39f2ef-e995-2d62-159d-44c0cfe72067" 
+        fb-model='vm.models.CourseGrid'
+        fb-model-initial-data=''
+        fb-odata-query=""
+        fb-page-size="20"
+        fb-server-paging="false"
+        fb-server-sorting="false"
+        fb-server-filtering="false"
+        fb-tab-index=""
+        fb-sortable="false"
+        fb-filterable="false"
+        fb-pageable="false"
+        fb-columns='{"columnData":[{"field":"CourseNumber","title":"{{ &amp;apos;Course Number&amp;apos; | translate }}","dataType":"string","isRequired":false,"sortable":false,"canEdit":true,"filterable":false,"dropdownListStorage":{}},{"field":"CourseName","title":"{{ &amp;apos;Course Name&amp;apos; | translate }}","dataType":"string","isRequired":false,"sortable":false,"canEdit":true,"filterable":false,"dropdownListStorage":{}},{"field":"Term","title":"{{ &amp;apos;Term 5 or Spring Semester&amp;apos; | translate }}","dataType":"string","isRequired":false,"sortable":false,"canEdit":true,"filterable":false,"dropdownListStorage":{}}],"isEditable":true,"isAddable":false,"isDeletable":false,"typeOfEditor":"incell","addLocation":"bottom","schemaIdName":"Id"}'
+        fb-add-record-message="{{ 'Add New Record' | translate }}"
+        fb-no-records="true" 
+        fb-initialized='vm.gridInitialized(payload)'
+        fb-data-bound='vm.gridDataBound(payload)'
+        fb-error='vm.gridDataSourceError(payload)'&gt;
+    &lt;/fb-grid&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="id043550ff-2358-9714-50f0-b6efb16c2185" ng-show="true" class="panel panel-default"&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col-xs-12 col-sm-12 col-md-12"&gt;&lt;div id="id7f63a8a0-f33b-b78f-f2ce-5cfd1edcae3e" ng-show="true" class="form-group  cmc-div-htmlpage"&gt;
+    &lt;h3&gt;I am requesting that the Pass/Fail grading schema is used for the courses listed above.  I have spoken with my ASC/Program Chair and I understand this request means that my earned letter grade for the course(s) listed above will not appear on my transcript, and that the following parameters apply:&lt;h3&gt;&lt;h3&gt;
+&lt;b&gt;•&lt;/b&gt;	Undergraduate Students: Undergraduate students who earn a 60% or higher in the course will be assigned a grade of Pass (P), which will not impact GPA.  Undergraduate students who earn less than a 60% in their course will earn a Fail (F), which will impact GPA.  For Term 5 ADP students, the grade of UF will remain unchanged and should be assigned to students who have not participated since Week 4. &lt;/h3&gt;
+&lt;h3&gt;&lt;b&gt;•&lt;/b&gt;	Graduate Students: Graduate students who earn a 70% or higher in the course will be assigned a grade of Pass (P), which will not impact GPA.  Graduate students who earn less than 70% in their course will earn a Fail (F), which will impact GPA.  For Term 5 ADP students, the grade of UF will remain unchanged and should be assigned to students who have not participated since Week 4.&lt;/h3&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="idb1761483-c62c-1d10-6e2e-9632bfab4c2f" ng-show="true" class="panel panel-default"&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col-xs-12 col-sm-12 col-md-12"&gt;&lt;div ng-show="true" class="form-group cmc-div-masked-textbox"&gt;
+    &lt;cmc-masked-input-text 
+        cmc-id="id60429e0e-8940-4050-571a-997cf2c75059" 
+        cmc-model="vm.models.signature" 
+        cmc-class="" 
+        cmc-disabled="false" 
+        cmc-visible="true" 
+        cmc-label="{{ 'Student Signature' | translate }}" 
+        cmc-tooltip="{{ 'Signature' | translate }}" 
+        cmc-tooltip-duration="750"
+        cmc-required="false" 
+        cmc-tab-index=""
+        cmc-required-message="" 
+        cmc-readonly="false" 
+        cmc-input-mask="''" 
+        cmc-ref="vm.controlRefs.values['id60429e0e-8940-4050-571a-997cf2c75059']"
+        cmc-place-holder=""
+        cmc-pattern=""
+        cmc-change="vm.maskedTextBoxChange(payload)"
+        cmc-blur="vm.maskedTextBoxBlur(payload)"
+        cmc-pattern-message=""&gt;
+    &lt;/cmc-masked-input-text&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="id6edad3d1-3ee5-3d9e-81e2-71a38c458666" ng-show="true" class="panel panel-default"&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col-xs-12 col-sm-12 col-md-12"&gt;&lt;div ng-show="true" class="form-group cmc-div-datepicker"&gt;
+    &lt;cmc-date-picker 
+        cmc-id="idb2e76d67-cbe6-79f6-2c51-44aa4670bb43" 
+        cmc-model="vm.models.initialsDate" 
+        cmc-class="" 
+        cmc-disabled="true" 
+        cmc-visible="true" 
+        cmc-label="{{ 'Date' | translate }}" 
+        cmc-tooltip=""
+        cmc-tooltip-duration="750" 
+        cmc-required="false" 
+        cmc-tab-index=""
+        cmc-disable-typing="false"
+        cmc-required-message="" 
+        cmc-readonly="true" 
+        cmc-min-string=""
+        cmc-max-string=""
+        cmc-ref="vm.controlRefs.values['idb2e76d67-cbe6-79f6-2c51-44aa4670bb43']"
+        cmc-change="vm.datePickerChange(payload)"
+        cmc-format=""
+        cmc-culture="{{vm.currentInstance.locale}}"
+        cmc-ignore-time="false"&gt;
+    &lt;/cmc-date-picker&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</Html>
+      <IsEndState>false</IsEndState>
+      <IncludeInViewSummary>true</IncludeInViewSummary>
+      <CssClass></CssClass>
+      <FormId>id2db634e4-cb85-7792-f0da-de2d21d9ea39</FormId>
+      <OriginalState>H4sIAAAAAAAEAD3MQQrCMBAAwK9I7mZTeysqeFbpoSJel5C0C01Ssisxvl6s4ANm9qecsfb+7Ood56frPUumOGKst7q4zSvMkQ9qElk6ALaTC8g6kM2JkxdtU4CdMS00BgaXCWd6o1CKsMasfkNH/6OUokurUx6/sIHH9TKs7ZYiC0brFBw/juQnSpcAAAA=</OriginalState>
+      <SecureState>H4sIAAAAAAAEAD3MQQrCMBAAwK9I7mZTeysqeFbpoSJel5C0C01Ssisxvl6s4ANm9qecsfb+7Ood56frPUumOGKst7q4zSvMkQ9qElk6ALaTC8g6kM2JkxdtU4CdMS00BgaXCWd6o1CKsMasfkNH/6OUokurUx6/sIHH9TKs7ZYiC0brFBw/juQnSpcAAAA=</SecureState>
+      <EntityState>0</EntityState>
+    </Forms>
+    <Forms>
+      <Id>0</Id>
+      <Name>PassFailOptInForm_End</Name>
+      <Title></Title>
+      <Description></Description>
+      <Json>{"name":"PassFailOptInForm_End","title":"","description":"","id":0,"formsections":[{"columns":[[{"ControlType":"HTML","ModuleName":null,"EntityName":null,"EntityNavigationalName":null,"EntityDisplayName":null,"Name":null,"DisplayName":"HTML","FullName":"..","ParentEntityName":null,"IsNavigation":false,"NavigationProperties":[],"ControlProperties":[{"Name":"ControlType","DisplayName":"Control Type","Value":"HTML","IsEditable":false,"IsVisible":true,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Uuid","DisplayName":"Uuid","Value":"9fc56bed-32de-d89a-af04-0c049c3fb603","IsEditable":false,"IsVisible":false,"EditType":"NotEditable","EditDropdownListValues":null,"EditQuery":null},{"Name":"Class","DisplayName":"Class","Value":"","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"HTML","DisplayName":"HTML","Value":"&lt;h2&gt;{{vm.models.endMessage}}&lt;/h2&gt;","IsEditable":true,"IsVisible":true,"EditType":"TextArea","EditDropdownListValues":null,"EditQuery":null},{"Name":"Id","DisplayName":"Id","Value":"idfc41ff9e-c94b-9152-1572-6c4086512cb4","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null},{"Name":"Visible","DisplayName":"Visible","Value":"true","IsEditable":true,"IsVisible":true,"EditType":"Text","EditDropdownListValues":null,"EditQuery":null}],"CustomProperty":false,"CustomPropertyKey":null,"ClrType":null,"IsEnabled":true,"SublayoutTypes":"P,R","NumberOfColumnsSpanned":0,"SublayoutTypesArray":["P","R"],"index":11,"uuid":"9fc56bed-32de-d89a-af04-0c049c3fb603"}]],"uuid":"9de153f3-57f8-e4ff-976b-56ba8e04629d","formSectionId":"id1e60ec0e-de0b-569c-b7fd-10efb1c1a3b0","mergeWithNext":false,"mergeWithPrevious":false,"isVisible":"true","title":"","description":"","cssClass":"","spanDefinitions":[{"NumberOfColumnsSpanned":12,"CanIncreaseSpan":false,"CanDecreaseSpan":true}]}],"isEndState":true,"includeInViewSummary":true,"cssClass":"","formId":"ida4b5d705-b347-bf31-d1a9-9f8cb59eb7ae"}</Json>
+      <Html>&lt;div id="id1e60ec0e-de0b-569c-b7fd-10efb1c1a3b0" ng-show="true" class="panel panel-default"&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col-xs-12 col-sm-12 col-md-12"&gt;&lt;div id="idfc41ff9e-c94b-9152-1572-6c4086512cb4" ng-show="true" class="form-group  cmc-div-htmlpage"&gt;
+    &lt;h2&gt;{{vm.models.endMessage}}&lt;/h2&gt;
+&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</Html>
+      <IsEndState>true</IsEndState>
+      <IncludeInViewSummary>true</IncludeInViewSummary>
+      <CssClass></CssClass>
+      <FormId>ida4b5d705-b347-bf31-d1a9-9f8cb59eb7ae</FormId>
+      <OriginalState>H4sIAAAAAAAEAD3MQQrCMBAAwK9I7mZTeysqeFbpoSJel5C0C01Ssisxvl6s4ANm9qecsfb+7Ood56frPUumOGKst7q4zSvMkQ9qElk6ALaTC8g6kM2JkxdtU4CdMS00BgaXCWd6o1CKsMasfkNH/6OUokurUx6/sIHH9TKs7ZYiC0brFBw/juQnSpcAAAA=</OriginalState>
+      <SecureState>H4sIAAAAAAAEAD3MQQrCMBAAwK9I7mZTeysqeFbpoSJel5C0C01Ssisxvl6s4ANm9qecsfb+7Ood56frPUumOGKst7q4zSvMkQ9qElk6ALaTC8g6kM2JkxdtU4CdMS00BgaXCWd6o1CKsMasfkNH/6OUokurUx6/sIHH9TKs7ZYiC0brFBw/juQnSpcAAAA=</SecureState>
+      <EntityState>0</EntityState>
+    </Forms>
+    <WorkflowDefinition>
+      <Name>PassFailOptInForm_SEQUENCE</Name>
+      <EntityType>Cmc.Core.Eventing.VoidEntity, Cmc.Core</EntityType>
+      <EventType>Cmc.Core.Eventing.ConstructedEvent, Cmc.Core</EventType>
+      <DateCreated>2020-05-11T12:26:25.937</DateCreated>
+      <DateModified>2020-05-11T12:26:25.937</DateModified>
+      <Id>0</Id>
+      <OriginalState>H4sIAAAAAAAEALXSwYrCQAwA0F+RudtUvZVaWNSDqOvBZfEaaqqBTkZm4tb69dpZ2Fs9LPQyISR5hDD5h/fY7qsNtd9Y32hfBfUsZ5T2q73S6G5rCXNzUb1mAKG8kMWQWC69C67SpHQWpmk6g0kKB/KMNT9Q2QlEOJhfIeM/o2mapJklzp+7wQkcd9tDZMcsQVFKMkXes04sFOtTDl3MY8uIM+F6btTfyEARS72z/egnWhqAXYmyxnwI/IdEB7KXqLTw9HqHuHan79yJK/4vD+8/bvEEgGNZbtkCAAA=</OriginalState>
+      <SecureState>H4sIAAAAAAAEAD3MQQrCMBAAwK9I7mZTeysqeFbpoSJel5C0C01Ssisxvl6s4ANm9qecsfb+7Ood56frPUumOGKst7q4zSvMkQ9qElk6ALaTC8g6kM2JkxdtU4CdMS00BgaXCWd6o1CKsMasfkNH/6OUokurUx6/sIHH9TKs7ZYiC0brFBw/juQnSpcAAAA=</SecureState>
+      <EntityState>0</EntityState>
+    </WorkflowDefinition>
+    <EnabledWorkflowDefinitionVersion>
+      <WorkflowDefinitionId>0</WorkflowDefinitionId>
+      <Xaml>&lt;Activity mc:Ignorable="sap sap2010 sads" x:Class="PassFailOptInForm_SEQUENCE" this:PassFailOptInForm_SEQUENCE.defaultGridItems="[new SerializableDynamicObject(5){ new SerializableDynamicObject With { .DataDictionary = new Dictionary (Of String, Object) From {{&amp;quot;CourseNumber&amp;quot;,&amp;quot;&amp;quot;}, { &amp;quot;CourseName&amp;quot;, &amp;quot;&amp;quot;}, { &amp;quot;Term&amp;quot;, &amp;quot;&amp;quot;}, {&amp;quot;Id&amp;quot;,1}}},new SerializableDynamicObject With { .DataDictionary = new Dictionary (Of String, Object) From {{&amp;quot;CourseNumber&amp;quot;,&amp;quot;&amp;quot;}, { &amp;quot;CourseName&amp;quot;, &amp;quot;&amp;quot;}, { &amp;quot;Term&amp;quot;, &amp;quot;&amp;quot;}, {&amp;quot;Id&amp;quot;,2}}},new SerializableDynamicObject With { .DataDictionary = new Dictionary (Of String, Object) From {{&amp;quot;CourseNumber&amp;quot;,&amp;quot;&amp;quot;}, { &amp;quot;CourseName&amp;quot;, &amp;quot;&amp;quot;}, { &amp;quot;Term&amp;quot;, &amp;quot;&amp;quot;}, {&amp;quot;Id&amp;quot;,3}}},new SerializableDynamicObject With { .DataDictionary = new Dictionary (Of String, Object) From {{&amp;quot;CourseNumber&amp;quot;,&amp;quot;&amp;quot;}, { &amp;quot;CourseName&amp;quot;, &amp;quot;&amp;quot;}, { &amp;quot;Term&amp;quot;, &amp;quot;&amp;quot;}, {&amp;quot;Id&amp;quot;,4}}},new SerializableDynamicObject With { .DataDictionary = new Dictionary (Of String, Object) From {{&amp;quot;CourseNumber&amp;quot;,&amp;quot;&amp;quot;}, { &amp;quot;CourseName&amp;quot;, &amp;quot;&amp;quot;}, { &amp;quot;Term&amp;quot;, &amp;quot;&amp;quot;}, {&amp;quot;Id&amp;quot;,5}}},new SerializableDynamicObject With { .DataDictionary = new Dictionary (Of String, Object) From {{&amp;quot;CourseNumber&amp;quot;,&amp;quot;&amp;quot;}, { &amp;quot;CourseName&amp;quot;, &amp;quot;&amp;quot;}, { &amp;quot;Term&amp;quot;, &amp;quot;&amp;quot;}, {&amp;quot;Id&amp;quot;,6}}}}]"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:cce="clr-namespace:Cmc.Core.Eventing;assembly=Cmc.Core"
+ xmlns:ccwa="clr-namespace:Cmc.Core.Workflow.Activities;assembly=Cmc.Core.Workflow"
+ xmlns:ccwae="clr-namespace:Cmc.Core.Workflow.Activities.EntityModel;assembly=Cmc.Core.Workflow"
+ xmlns:cnce="clr-namespace:Cmc.Nexus.Common.Entities;assembly=Cmc.Nexus.Common.Contracts"
+ xmlns:cnce1="clr-namespace:Cmc.Nexus.Crm.Entities;assembly=Cmc.Nexus.Crm.Contracts"
+ xmlns:cncw="clr-namespace:Cmc.Nexus.Crm.Workflow;assembly=Cmc.Nexus.Crm.Workflow"
+ xmlns:cnf="clr-namespace:Cmc.Nexus.FormsBuilder;assembly=Cmc.Nexus.FormsBuilder.Contracts"
+ xmlns:cnfe="clr-namespace:Cmc.Nexus.FormsBuilder.Entities;assembly=Cmc.Nexus.FormsBuilder.Contracts"
+ xmlns:cnfw="clr-namespace:Cmc.Nexus.FormsBuilder.Workflow;assembly=Cmc.Nexus.FormsBuilder.Workflow"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:this="clr-namespace:"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"&gt;
+  &lt;x:Members&gt;
+    &lt;x:Property Name="formInstance" Type="InOutArgument(cnf:FormInstance)" /&gt;
+    &lt;x:Property Name="entity" Type="InOutArgument(cce:VoidEntity)" /&gt;
+    &lt;x:Property Name="event" Type="InOutArgument(cce:ConstructedEvent)" /&gt;
+    &lt;x:Property Name="initialsDate" Type="InOutArgument(x:String)" /&gt;
+    &lt;x:Property Name="signature" Type="InOutArgument(x:String)" /&gt;
+    &lt;x:Property Name="studentEntity" Type="InOutArgument(cnce:StudentEntity)" /&gt;
+    &lt;x:Property Name="studentName" Type="InOutArgument(x:String)" /&gt;
+    &lt;x:Property Name="endMessage" Type="InOutArgument(x:String)" /&gt;
+    &lt;x:Property Name="CourseGrid" Type="InOutArgument(cnfe:SerializableDynamicObject[])" /&gt;
+    &lt;x:Property Name="_CourseGrid_CourseNumber" Type="InOutArgument(x:String)" /&gt;
+    &lt;x:Property Name="_CourseGrid_CourseName" Type="InOutArgument(x:String)" /&gt;
+    &lt;x:Property Name="_CourseGrid_Term" Type="InOutArgument(x:String)" /&gt;
+    &lt;x:Property Name="defaultGridItems" Type="InArgument(cnfe:SerializableDynamicObject[])" /&gt;
+  &lt;/x:Members&gt;
+  &lt;mva:VisualBasic.Settings&gt;
+    &lt;x:Null /&gt;
+  &lt;/mva:VisualBasic.Settings&gt;
+  &lt;sap2010:WorkflowViewState.IdRef&gt;PassFailOptInForm_SEQUENCE_1&lt;/sap2010:WorkflowViewState.IdRef&gt;
+  &lt;TextExpression.NamespacesForImplementation&gt;
+    &lt;sco:Collection x:TypeArguments="x:String"&gt;
+      &lt;x:String&gt;System.Activities&lt;/x:String&gt;
+      &lt;x:String&gt;System.Activities.Statements&lt;/x:String&gt;
+      &lt;x:String&gt;System.Activities.Expressions&lt;/x:String&gt;
+      &lt;x:String&gt;System.Activities.Validation&lt;/x:String&gt;
+      &lt;x:String&gt;System.Activities.XamlIntegration&lt;/x:String&gt;
+      &lt;x:String&gt;Cmc.Nexus.FormsBuilder.Workflow&lt;/x:String&gt;
+      &lt;x:String&gt;Microsoft.VisualBasic.Activities&lt;/x:String&gt;
+      &lt;x:String&gt;Newtonsoft.Json&lt;/x:String&gt;
+      &lt;x:String&gt;System&lt;/x:String&gt;
+      &lt;x:String&gt;System.Windows.Markup&lt;/x:String&gt;
+      &lt;x:String&gt;Cmc.Core.Eventing&lt;/x:String&gt;
+      &lt;x:String&gt;Cmc.Nexus.FormsBuilder&lt;/x:String&gt;
+      &lt;x:String&gt;Cmc.Nexus.FormsBuilder.Entities&lt;/x:String&gt;
+      &lt;x:String&gt;Cmc.Nexus.Common.Entities&lt;/x:String&gt;
+      &lt;x:String&gt;Cmc.Core.EntityModel&lt;/x:String&gt;
+      &lt;x:String&gt;Cmc.Core.ComponentModel&lt;/x:String&gt;
+      &lt;x:String&gt;Microsoft.VisualBasic.CompilerServices&lt;/x:String&gt;
+      &lt;x:String&gt;System.Collections.Generic&lt;/x:String&gt;
+      &lt;x:String&gt;System.Linq&lt;/x:String&gt;
+    &lt;/sco:Collection&gt;
+  &lt;/TextExpression.NamespacesForImplementation&gt;
+  &lt;TextExpression.ReferencesForImplementation&gt;
+    &lt;sco:Collection x:TypeArguments="AssemblyReference"&gt;
+      &lt;AssemblyReference&gt;System.Activities&lt;/AssemblyReference&gt;
+      &lt;AssemblyReference&gt;Cmc.Nexus.FormsBuilder.Workflow&lt;/AssemblyReference&gt;
+      &lt;AssemblyReference&gt;Newtonsoft.Json&lt;/AssemblyReference&gt;
+      &lt;AssemblyReference&gt;mscorlib&lt;/AssemblyReference&gt;
+      &lt;AssemblyReference&gt;PresentationCore&lt;/AssemblyReference&gt;
+      &lt;AssemblyReference&gt;WindowsBase&lt;/AssemblyReference&gt;
+      &lt;AssemblyReference&gt;PresentationFramework&lt;/AssemblyReference&gt;
+      &lt;AssemblyReference&gt;System.Xaml&lt;/AssemblyReference&gt;
+      &lt;AssemblyReference&gt;Cmc.Core&lt;/AssemblyReference&gt;
+      &lt;AssemblyReference&gt;Cmc.Nexus.FormsBuilder.Contracts&lt;/AssemblyReference&gt;
+      &lt;AssemblyReference&gt;System&lt;/AssemblyReference&gt;
+      &lt;AssemblyReference&gt;System.Core&lt;/AssemblyReference&gt;
+      &lt;AssemblyReference&gt;System.ServiceModel&lt;/AssemblyReference&gt;
+      &lt;AssemblyReference&gt;Cmc.Nexus.Common.Contracts&lt;/AssemblyReference&gt;
+      &lt;AssemblyReference&gt;System.Runtime.WindowsRuntime&lt;/AssemblyReference&gt;
+      &lt;AssemblyReference&gt;System.ComponentModel.Composition&lt;/AssemblyReference&gt;
+      &lt;AssemblyReference&gt;Microsoft.VisualBasic&lt;/AssemblyReference&gt;
+    &lt;/sco:Collection&gt;
+  &lt;/TextExpression.ReferencesForImplementation&gt;
+  &lt;StateMachine sap2010:WorkflowViewState.IdRef="StateMachine_1"&gt;
+    &lt;StateMachine.InitialState&gt;
+      &lt;State x:Name="__ReferenceID1" DisplayName="PassFailOptInForm" sap2010:WorkflowViewState.IdRef="State_2"&gt;
+        &lt;State.Entry&gt;
+          &lt;Sequence DisplayName="Init" sap2010:WorkflowViewState.IdRef="Sequence_4"&gt;
+            &lt;ccwa:GetWorkflowInstanceId sap2010:WorkflowViewState.IdRef="GetWorkflowInstanceId_3" Result="[workflowId]" /&gt;
+            &lt;cnfw:LookupUser sap2010:WorkflowViewState.IdRef="LookupUser_3" UserId="[studentId]" UserName="[formInstance.UserName]" UserType="[UserType.Student]" ValidationMessages="[formInstance.ValidationMessages]" /&gt;
+            &lt;Assign sap2010:WorkflowViewState.IdRef="Assign_5"&gt;
+              &lt;Assign.To&gt;
+                &lt;OutArgument x:TypeArguments="x:String"&gt;[logPrefix]&lt;/OutArgument&gt;
+              &lt;/Assign.To&gt;
+              &lt;Assign.Value&gt;
+                &lt;InArgument x:TypeArguments="x:String"&gt;[string.Format("{0} WF Id-{1} StudentId-{2}",logPrefix,workFlowId,studentId)]&lt;/InArgument&gt;
+              &lt;/Assign.Value&gt;
+            &lt;/Assign&gt;
+            &lt;ccwae:GetEntity x:TypeArguments="cnce:StudentEntity" EntityId="[studentId]" sap2010:WorkflowViewState.IdRef="GetEntity`1_3" Result="[studentEntity]" /&gt;
+            &lt;Assign sap2010:WorkflowViewState.IdRef="Assign_15"&gt;
+              &lt;Assign.To&gt;
+                &lt;OutArgument x:TypeArguments="cnfe:SerializableDynamicObject[]"&gt;[CourseGrid]&lt;/OutArgument&gt;
+              &lt;/Assign.To&gt;
+              &lt;Assign.Value&gt;
+                &lt;InArgument x:TypeArguments="cnfe:SerializableDynamicObject[]"&gt;[defaultGridItems]&lt;/InArgument&gt;
+              &lt;/Assign.Value&gt;
+            &lt;/Assign&gt;
+            &lt;Assign sap2010:WorkflowViewState.IdRef="Assign_7"&gt;
+              &lt;Assign.To&gt;
+                &lt;OutArgument x:TypeArguments="x:String"&gt;[studentName]&lt;/OutArgument&gt;
+              &lt;/Assign.To&gt;
+              &lt;Assign.Value&gt;
+                &lt;InArgument x:TypeArguments="x:String"&gt;[studentEntity.FirstName+" "+studentEntity.LastName]&lt;/InArgument&gt;
+              &lt;/Assign.Value&gt;
+            &lt;/Assign&gt;
+            &lt;Assign sap2010:WorkflowViewState.IdRef="Assign_6"&gt;
+              &lt;Assign.To&gt;
+                &lt;OutArgument x:TypeArguments="x:String"&gt;[InitialsDate]&lt;/OutArgument&gt;
+              &lt;/Assign.To&gt;
+              &lt;Assign.Value&gt;
+                &lt;InArgument x:TypeArguments="x:String"&gt;[Date.Today.ToString]&lt;/InArgument&gt;
+              &lt;/Assign.Value&gt;
+            &lt;/Assign&gt;
+          &lt;/Sequence&gt;
+        &lt;/State.Entry&gt;
+        &lt;State.Transitions&gt;
+          &lt;Transition DisplayName="Submit" sap2010:WorkflowViewState.IdRef="Transition_1"&gt;
+            &lt;Transition.Trigger&gt;
+              &lt;Sequence sap2010:WorkflowViewState.IdRef="Sequence_11"&gt;
+                &lt;cnfw:WaitForFormBookmark DisplayName="Submit" DisplayOrder="0" sap2010:WorkflowViewState.IdRef="WaitForFormBookmark_1" TransitionType="Default" /&gt;
+              &lt;/Sequence&gt;
+            &lt;/Transition.Trigger&gt;
+            &lt;Transition.To&gt;
+              &lt;State x:Name="__ReferenceID0" DisplayName="End" sap2010:WorkflowViewState.IdRef="State_1" IsFinal="True"&gt;
+                &lt;State.Entry&gt;
+                  &lt;Sequence sap2010:WorkflowViewState.IdRef="Sequence_6"&gt;
+                    &lt;cnfw:WaitForFormBookmark DisplayOrder="0" sap2010:WorkflowViewState.IdRef="WaitForFormBookmark_2" TransitionType="Default" /&gt;
+                    &lt;If Condition="[submitSuccess=&amp;quot;true&amp;quot;]" sap2010:WorkflowViewState.IdRef="If_1"&gt;
+                      &lt;If.Then&gt;
+                        &lt;Sequence DisplayName="Submit-Create Document With Attachment" sap2010:WorkflowViewState.IdRef="Sequence_13"&gt;
+                          &lt;Sequence.Variables&gt;
+                            &lt;Variable x:TypeArguments="x:String" Name="urlString" /&gt;
+                            &lt;Variable x:TypeArguments="s:Byte[]" Name="formsDocument" /&gt;
+                            &lt;Variable x:TypeArguments="cnce1:DocumentEntity" Name="documentEntity" /&gt;
+                          &lt;/Sequence.Variables&gt;
+                          &lt;ccwa:LogLine sap2010:WorkflowViewState.IdRef="LogLine_17" Text="[logPrefix+&amp;quot;Submit- Creating Document&amp;quot;]" /&gt;
+                          &lt;Persist sap2010:WorkflowViewState.IdRef="Persist_4" /&gt;
+                          &lt;Assign sap2010:WorkflowViewState.IdRef="Assign_14"&gt;
+                            &lt;Assign.To&gt;
+                              &lt;OutArgument x:TypeArguments="x:String"&gt;[urlString]&lt;/OutArgument&gt;
+                            &lt;/Assign.To&gt;
+                            &lt;Assign.Value&gt;
+                              &lt;InArgument x:TypeArguments="x:String"&gt;[formInstance.RendererBaseUrl +"#/viewCreator/" + formInstance.WorkflowDefinitionId.ToString + "/forms=PassFailOptInForm"]&lt;/InArgument&gt;
+                            &lt;/Assign.Value&gt;
+                          &lt;/Assign&gt;
+                          &lt;cnfw:PrintUrlToPdf Forms="{x:Null}" sap2010:WorkflowViewState.IdRef="PrintUrlToPdf_4" PdfDocument="[formsDocument]" Url="[urlString]" ValidationMessages="[formInstance.ValidationMessages]" /&gt;
+                          &lt;cncw:CreateDocument AwardYear="{x:Null}" ExpirationDate="{x:Null}" ModuleId="{x:Null}" SentDate="{x:Null}" ValidationMessages="{x:Null}" WorkFlowInstanceId="{x:Null}" Document="[documentEntity]" DocumentImage="[formsDocument]" DocumentStatusId="15" DocumentTypeId="124" DueDate="[DateTime.Today.AddDays(7)]" sap2010:WorkflowViewState.IdRef="CreateDocument_4" ImageFileName="[&amp;quot;PassFailOptInForm_&amp;quot; +studentEntity.StudentNumber +&amp;quot;.pdf&amp;quot;]" Note="Form Document Uploaded from Workflow" ReceivedDate="[DateTime.Today]" RequestDate="[DateTime.Today]" StudentId="[studentEntity.Id]" /&gt;
+                          &lt;TryCatch sap2010:WorkflowViewState.IdRef="TryCatch_4"&gt;
+                            &lt;TryCatch.Try&gt;
+                              &lt;cncw:SaveDocument Document="[documentEntity]" sap2010:WorkflowViewState.IdRef="SaveDocument_4" ValidationMessages="[formInstance.ValidationMessages]" /&gt;
+                            &lt;/TryCatch.Try&gt;
+                            &lt;TryCatch.Catches&gt;
+                              &lt;Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_4"&gt;
+                                &lt;ActivityAction x:TypeArguments="s:Exception"&gt;
+                                  &lt;ActivityAction.Argument&gt;
+                                    &lt;DelegateInArgument x:TypeArguments="s:Exception" Name="exception" /&gt;
+                                  &lt;/ActivityAction.Argument&gt;
+                                  &lt;ccwa:LogLine sap2010:WorkflowViewState.IdRef="LogLine_18" Level="Error" Text="[logPrefix+&amp;quot;Submit-Document Exception-&amp;quot;+exception.ToString]" /&gt;
+                                &lt;/ActivityAction&gt;
+                              &lt;/Catch&gt;
+                            &lt;/TryCatch.Catches&gt;
+                          &lt;/TryCatch&gt;
+                          &lt;ccwa:LogLine sap2010:WorkflowViewState.IdRef="LogLine_19" Text="[logPrefix+&amp;quot;Submit-Document Created&amp;quot;]" /&gt;
+                        &lt;/Sequence&gt;
+                      &lt;/If.Then&gt;
+                    &lt;/If&gt;
+                  &lt;/Sequence&gt;
+                &lt;/State.Entry&gt;
+              &lt;/State&gt;
+            &lt;/Transition.To&gt;
+            &lt;Transition.Action&gt;
+              &lt;Sequence sap2010:WorkflowViewState.IdRef="Sequence_7"&gt;
+                &lt;Assign sap2010:WorkflowViewState.IdRef="Assign_9"&gt;
+                  &lt;Assign.To&gt;
+                    &lt;OutArgument x:TypeArguments="x:String"&gt;[endMessage]&lt;/OutArgument&gt;
+                  &lt;/Assign.To&gt;
+                  &lt;Assign.Value&gt;
+                    &lt;InArgument x:TypeArguments="x:String"&gt;["Thank You for submitting the form."]&lt;/InArgument&gt;
+                  &lt;/Assign.Value&gt;
+                &lt;/Assign&gt;
+                &lt;Assign sap2010:WorkflowViewState.IdRef="Assign_10"&gt;
+                  &lt;Assign.To&gt;
+                    &lt;OutArgument x:TypeArguments="x:String"&gt;[submitSuccess]&lt;/OutArgument&gt;
+                  &lt;/Assign.To&gt;
+                  &lt;Assign.Value&gt;
+                    &lt;InArgument x:TypeArguments="x:String"&gt;true&lt;/InArgument&gt;
+                  &lt;/Assign.Value&gt;
+                &lt;/Assign&gt;
+              &lt;/Sequence&gt;
+            &lt;/Transition.Action&gt;
+            &lt;Transition.Condition&gt;[NOT formInstance.ValidationMessages.HasErrors]&lt;/Transition.Condition&gt;
+          &lt;/Transition&gt;
+          &lt;Transition DisplayName="Cancel" sap2010:WorkflowViewState.IdRef="Transition_2"&gt;
+            &lt;Transition.Trigger&gt;
+              &lt;Sequence sap2010:WorkflowViewState.IdRef="Sequence_10"&gt;
+                &lt;cnfw:WaitForFormBookmark DisplayName="Cancel" DisplayOrder="0" sap2010:WorkflowViewState.IdRef="WaitForFormBookmark_3" TransitionType="Default" /&gt;
+              &lt;/Sequence&gt;
+            &lt;/Transition.Trigger&gt;
+            &lt;Transition.To&gt;
+              &lt;x:Reference&gt;__ReferenceID0&lt;/x:Reference&gt;
+            &lt;/Transition.To&gt;
+            &lt;Transition.Action&gt;
+              &lt;Sequence DisplayName="Cancel" sap2010:WorkflowViewState.IdRef="Sequence_8"&gt;
+                &lt;Assign sap2010:WorkflowViewState.IdRef="Assign_11"&gt;
+                  &lt;Assign.To&gt;
+                    &lt;OutArgument x:TypeArguments="x:String"&gt;[endMessage]&lt;/OutArgument&gt;
+                  &lt;/Assign.To&gt;
+                  &lt;Assign.Value&gt;
+                    &lt;InArgument x:TypeArguments="x:String"&gt;["Thank You .Your submission has been cancelled."]&lt;/InArgument&gt;
+                  &lt;/Assign.Value&gt;
+                &lt;/Assign&gt;
+              &lt;/Sequence&gt;
+            &lt;/Transition.Action&gt;
+          &lt;/Transition&gt;
+        &lt;/State.Transitions&gt;
+      &lt;/State&gt;
+    &lt;/StateMachine.InitialState&gt;
+    &lt;x:Reference&gt;__ReferenceID1&lt;/x:Reference&gt;
+    &lt;x:Reference&gt;__ReferenceID0&lt;/x:Reference&gt;
+    &lt;StateMachine.Variables&gt;
+      &lt;Variable x:TypeArguments="x:String" Name="renderedFormImage" /&gt;
+      &lt;Variable x:TypeArguments="s:Guid" Name="workFlowId" /&gt;
+      &lt;Variable x:TypeArguments="x:Int32" Name="studentId" /&gt;
+      &lt;Variable x:TypeArguments="x:String" Default="PassFailOptInForm : : " Name="logPrefix" /&gt;
+      &lt;Variable x:TypeArguments="x:String" Name="submitSuccess" /&gt;
+    &lt;/StateMachine.Variables&gt;
+    &lt;sads:DebugSymbol.Symbol&gt;dzNDOlxVc2Vyc1xrZXNraWxsYVxBcHBEYXRhXExvY2FsXFRlbXBcMTBcdG1wQUE4Mi50bXBOAYEBAaIMAQJWA/ABEgIBAewBNOwBTAIBaVgH5AEPAgExiAEPtQEXAgECWgt+FgIBRoMBD4UBGgIBRMsBI8sBUgIBQ7gBD8kBGgIBOs8BD9EBGgIBONcBD+ABGgIBM4oBE7MBHgIBBFsNW3sCAWZcDVzcAQIBYF0NZBYCAVllDWWlAQIBVGYNbRYCAU9uDXUWAgFLdg19FgIBR4QBEYQBpAECAUW5ARHAARoCAT/BARHIARoCATvQARHQAaQBAgE52AER3wEaAgE0iwEViwGTAQIBMIwBFbIBGgIBBVtqW3gCAWdca1yEAQIBZVy2AVzZAQIBZFyOAVyiAQIBY1xUXGECAWFiOGKFAQIBXF85X0QCAVplTGVZAgFXZZEBZaIBAgFVa1BrYgIBUmhRaF0CAVBzOHNsAgFOcDlwRgIBTHs4e00CAUp4OXhHAgFIvgE8vgFiAgFCuwE9uwFJAgFAxgE8xgFAAgE+wwE9wwFMAgE83QE83QFuAgE32gE92gFJAgE1jAEjjAFFAgEGjgEZsAEkAgEIlAEblAGRAQIBLZUBG5UBUgIBLJYBG50BJAIBKJ4BG54B2wECASKfARufAe8EAgEVoAEbrgEmAgEMrwEbrwGPAQIBCZQBW5QBjgECAS6bAUabAcABAgErmAFHmAFSAgEpngF+ngGPAQIBJp4BtQGeAdgBAgElngGUAZ4BoQECASOfAaQCnwGpAgIBIZ8B7QGfAf4BAgEfnwHMAZ8B3gECAR2fAegDnwGOBAIBHJ8BkAKfAZQCAgEbnwGcBJ8BrgQCARqfAbsEnwHNBAIBGZ8BsgKfAc8CAgEYnwGRA58B4gMCARefAdgEnwHsBAIBFqIBH6IBuAECARGqASOqAbsBAgENrwFbrwGMAQIBCqIBO6IBTQIBE6IBkgGiAbUBAgESqgFxqgG4AQIBDg==&lt;/sads:DebugSymbol.Symbol&gt;
+  &lt;/StateMachine&gt;
+  &lt;sap2010:WorkflowViewState.ViewStateManager&gt;
+    &lt;sap2010:ViewStateManager&gt;
+      &lt;sap2010:ViewStateData Id="GetWorkflowInstanceId_3" sap:VirtualizedContainerService.HintSize="242,22" /&gt;
+      &lt;sap2010:ViewStateData Id="LookupUser_3" sap:VirtualizedContainerService.HintSize="242,22" /&gt;
+      &lt;sap2010:ViewStateData Id="Assign_5" sap:VirtualizedContainerService.HintSize="242,60" /&gt;
+      &lt;sap2010:ViewStateData Id="GetEntity`1_3" sap:VirtualizedContainerService.HintSize="242,22" /&gt;
+      &lt;sap2010:ViewStateData Id="Assign_15" sap:VirtualizedContainerService.HintSize="242,60" /&gt;
+      &lt;sap2010:ViewStateData Id="Assign_7" sap:VirtualizedContainerService.HintSize="242,60" /&gt;
+      &lt;sap2010:ViewStateData Id="Assign_6" sap:VirtualizedContainerService.HintSize="242,60" /&gt;
+      &lt;sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="264,670"&gt;
+        &lt;sap:WorkflowViewStateService.ViewState&gt;
+          &lt;scg:Dictionary x:TypeArguments="x:String, x:Object"&gt;
+            &lt;x:Boolean x:Key="IsExpanded"&gt;True&lt;/x:Boolean&gt;
+          &lt;/scg:Dictionary&gt;
+        &lt;/sap:WorkflowViewStateService.ViewState&gt;
+      &lt;/sap2010:ViewStateData&gt;
+      &lt;sap2010:ViewStateData Id="WaitForFormBookmark_1" sap:VirtualizedContainerService.HintSize="200,22" /&gt;
+      &lt;sap2010:ViewStateData Id="Sequence_11" sap:VirtualizedContainerService.HintSize="222,146"&gt;
+        &lt;sap:WorkflowViewStateService.ViewState&gt;
+          &lt;scg:Dictionary x:TypeArguments="x:String, x:Object"&gt;
+            &lt;x:Boolean x:Key="IsExpanded"&gt;True&lt;/x:Boolean&gt;
+          &lt;/scg:Dictionary&gt;
+        &lt;/sap:WorkflowViewStateService.ViewState&gt;
+      &lt;/sap2010:ViewStateData&gt;
+      &lt;sap2010:ViewStateData Id="WaitForFormBookmark_2" sap:VirtualizedContainerService.HintSize="565,22" /&gt;
+      &lt;sap2010:ViewStateData Id="LogLine_17" sap:VirtualizedContainerService.HintSize="418,111" /&gt;
+      &lt;sap2010:ViewStateData Id="Persist_4" sap:VirtualizedContainerService.HintSize="418,22" /&gt;
+      &lt;sap2010:ViewStateData Id="Assign_14" sap:VirtualizedContainerService.HintSize="418,60" /&gt;
+      &lt;sap2010:ViewStateData Id="PrintUrlToPdf_4" sap:VirtualizedContainerService.HintSize="418,22" /&gt;
+      &lt;sap2010:ViewStateData Id="CreateDocument_4" sap:VirtualizedContainerService.HintSize="418,381" /&gt;
+      &lt;sap2010:ViewStateData Id="SaveDocument_4" sap:VirtualizedContainerService.HintSize="200,22" /&gt;
+      &lt;sap2010:ViewStateData Id="LogLine_18" sap:VirtualizedContainerService.HintSize="214,111" /&gt;
+      &lt;sap2010:ViewStateData Id="Catch`1_4" sap:VirtualizedContainerService.HintSize="404,21"&gt;
+        &lt;sap:WorkflowViewStateService.ViewState&gt;
+          &lt;scg:Dictionary x:TypeArguments="x:String, x:Object"&gt;
+            &lt;x:Boolean x:Key="IsExpanded"&gt;False&lt;/x:Boolean&gt;
+            &lt;x:Boolean x:Key="IsPinned"&gt;False&lt;/x:Boolean&gt;
+          &lt;/scg:Dictionary&gt;
+        &lt;/sap:WorkflowViewStateService.ViewState&gt;
+      &lt;/sap2010:ViewStateData&gt;
+      &lt;sap2010:ViewStateData Id="TryCatch_4" sap:VirtualizedContainerService.HintSize="418,287" /&gt;
+      &lt;sap2010:ViewStateData Id="LogLine_19" sap:VirtualizedContainerService.HintSize="418,111" /&gt;
+      &lt;sap2010:ViewStateData Id="Sequence_13" sap:VirtualizedContainerService.HintSize="440,1358"&gt;
+        &lt;sap:WorkflowViewStateService.ViewState&gt;
+          &lt;scg:Dictionary x:TypeArguments="x:String, x:Object"&gt;
+            &lt;x:Boolean x:Key="IsExpanded"&gt;True&lt;/x:Boolean&gt;
+          &lt;/scg:Dictionary&gt;
+        &lt;/sap:WorkflowViewStateService.ViewState&gt;
+      &lt;/sap2010:ViewStateData&gt;
+      &lt;sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="565,1506" /&gt;
+      &lt;sap2010:ViewStateData Id="Sequence_6" sap:VirtualizedContainerService.HintSize="587,1692"&gt;
+        &lt;sap:WorkflowViewStateService.ViewState&gt;
+          &lt;scg:Dictionary x:TypeArguments="x:String, x:Object"&gt;
+            &lt;x:Boolean x:Key="IsExpanded"&gt;True&lt;/x:Boolean&gt;
+          &lt;/scg:Dictionary&gt;
+        &lt;/sap:WorkflowViewStateService.ViewState&gt;
+      &lt;/sap2010:ViewStateData&gt;
+      &lt;sap2010:ViewStateData Id="State_1" sap:VirtualizedContainerService.HintSize="114,61"&gt;
+        &lt;sap:WorkflowViewStateService.ViewState&gt;
+          &lt;scg:Dictionary x:TypeArguments="x:String, x:Object"&gt;
+            &lt;av:Point x:Key="ShapeLocation"&gt;253,289.5&lt;/av:Point&gt;
+            &lt;av:Size x:Key="ShapeSize"&gt;114,61&lt;/av:Size&gt;
+            &lt;x:Boolean x:Key="IsPinned"&gt;False&lt;/x:Boolean&gt;
+          &lt;/scg:Dictionary&gt;
+        &lt;/sap:WorkflowViewStateService.ViewState&gt;
+      &lt;/sap2010:ViewStateData&gt;
+      &lt;sap2010:ViewStateData Id="Assign_9" sap:VirtualizedContainerService.HintSize="242,60" /&gt;
+      &lt;sap2010:ViewStateData Id="Assign_10" sap:VirtualizedContainerService.HintSize="242,60" /&gt;
+      &lt;sap2010:ViewStateData Id="Sequence_7" sap:VirtualizedContainerService.HintSize="264,284"&gt;
+        &lt;sap:WorkflowViewStateService.ViewState&gt;
+          &lt;scg:Dictionary x:TypeArguments="x:String, x:Object"&gt;
+            &lt;x:Boolean x:Key="IsExpanded"&gt;True&lt;/x:Boolean&gt;
+          &lt;/scg:Dictionary&gt;
+        &lt;/sap:WorkflowViewStateService.ViewState&gt;
+      &lt;/sap2010:ViewStateData&gt;
+      &lt;sap2010:ViewStateData Id="Transition_1" sap:VirtualizedContainerService.HintSize="430,773"&gt;
+        &lt;sap:WorkflowViewStateService.ViewState&gt;
+          &lt;scg:Dictionary x:TypeArguments="x:String, x:Object"&gt;
+            &lt;x:Int32 x:Key="SrcConnectionPointIndex"&gt;3&lt;/x:Int32&gt;
+            &lt;x:Int32 x:Key="DestConnectionPointIndex"&gt;2&lt;/x:Int32&gt;
+            &lt;av:PointCollection x:Key="ConnectorLocation"&gt;238.7,180.5 238.7,210.5 258.7,210.5 258.7,289.5&lt;/av:PointCollection&gt;
+          &lt;/scg:Dictionary&gt;
+        &lt;/sap:WorkflowViewStateService.ViewState&gt;
+      &lt;/sap2010:ViewStateData&gt;
+      &lt;sap2010:ViewStateData Id="WaitForFormBookmark_3" sap:VirtualizedContainerService.HintSize="200,22" /&gt;
+      &lt;sap2010:ViewStateData Id="Sequence_10" sap:VirtualizedContainerService.HintSize="222,146"&gt;
+        &lt;sap:WorkflowViewStateService.ViewState&gt;
+          &lt;scg:Dictionary x:TypeArguments="x:String, x:Object"&gt;
+            &lt;x:Boolean x:Key="IsExpanded"&gt;True&lt;/x:Boolean&gt;
+          &lt;/scg:Dictionary&gt;
+        &lt;/sap:WorkflowViewStateService.ViewState&gt;
+      &lt;/sap2010:ViewStateData&gt;
+      &lt;sap2010:ViewStateData Id="Assign_11" sap:VirtualizedContainerService.HintSize="242,60" /&gt;
+      &lt;sap2010:ViewStateData Id="Sequence_8" sap:VirtualizedContainerService.HintSize="264,184"&gt;
+        &lt;sap:WorkflowViewStateService.ViewState&gt;
+          &lt;scg:Dictionary x:TypeArguments="x:String, x:Object"&gt;
+            &lt;x:Boolean x:Key="IsExpanded"&gt;True&lt;/x:Boolean&gt;
+          &lt;/scg:Dictionary&gt;
+        &lt;/sap:WorkflowViewStateService.ViewState&gt;
+      &lt;/sap2010:ViewStateData&gt;
+      &lt;sap2010:ViewStateData Id="Transition_2" sap:VirtualizedContainerService.HintSize="430,673"&gt;
+        &lt;sap:WorkflowViewStateService.ViewState&gt;
+          &lt;scg:Dictionary x:TypeArguments="x:String, x:Object"&gt;
+            &lt;av:PointCollection x:Key="ConnectorLocation"&gt;318.5,180.5 318.5,210.5 321.4,210.5 321.4,289.5&lt;/av:PointCollection&gt;
+            &lt;x:Int32 x:Key="SrcConnectionPointIndex"&gt;59&lt;/x:Int32&gt;
+            &lt;x:Int32 x:Key="DestConnectionPointIndex"&gt;46&lt;/x:Int32&gt;
+          &lt;/scg:Dictionary&gt;
+        &lt;/sap:WorkflowViewStateService.ViewState&gt;
+      &lt;/sap2010:ViewStateData&gt;
+      &lt;sap2010:ViewStateData Id="State_2" sap:VirtualizedContainerService.HintSize="326,1059"&gt;
+        &lt;sap:WorkflowViewStateService.ViewState&gt;
+          &lt;scg:Dictionary x:TypeArguments="x:String, x:Object"&gt;
+            &lt;av:Point x:Key="ShapeLocation"&gt;233,119.5&lt;/av:Point&gt;
+            &lt;av:Size x:Key="ShapeSize"&gt;114,61&lt;/av:Size&gt;
+            &lt;x:Boolean x:Key="IsPinned"&gt;False&lt;/x:Boolean&gt;
+          &lt;/scg:Dictionary&gt;
+        &lt;/sap:WorkflowViewStateService.ViewState&gt;
+      &lt;/sap2010:ViewStateData&gt;
+      &lt;sap2010:ViewStateData Id="StateMachine_1" sap:VirtualizedContainerService.HintSize="614,636"&gt;
+        &lt;sap:WorkflowViewStateService.ViewState&gt;
+          &lt;scg:Dictionary x:TypeArguments="x:String, x:Object"&gt;
+            &lt;x:Boolean x:Key="IsExpanded"&gt;False&lt;/x:Boolean&gt;
+            &lt;av:Point x:Key="ShapeLocation"&gt;270,2.5&lt;/av:Point&gt;
+            &lt;x:Double x:Key="StateContainerWidth"&gt;600&lt;/x:Double&gt;
+            &lt;x:Double x:Key="StateContainerHeight"&gt;600&lt;/x:Double&gt;
+            &lt;av:PointCollection x:Key="ConnectorLocation"&gt;286,77.5 286,107.5 295.7,107.5 295.7,119.5&lt;/av:PointCollection&gt;
+          &lt;/scg:Dictionary&gt;
+        &lt;/sap:WorkflowViewStateService.ViewState&gt;
+      &lt;/sap2010:ViewStateData&gt;
+      &lt;sap2010:ViewStateData Id="PassFailOptInForm_SEQUENCE_1" sap:VirtualizedContainerService.HintSize="654,716" /&gt;
+    &lt;/sap2010:ViewStateManager&gt;
+  &lt;/sap2010:WorkflowViewState.ViewStateManager&gt;
+&lt;/Activity&gt;</Xaml>
+      <Version>57</Version>
+      <Major>1</Major>
+      <Minor>0</Minor>
+      <Build>0</Build>
+      <Revision>57</Revision>
+      <PublishedBy>keskilla</PublishedBy>
+      <SourceLocation>100537cts20 [Workflow Designer]</SourceLocation>
+      <DateCreated>2020-05-13T14:12:46.687</DateCreated>
+      <DateModified>2020-05-14T07:56:04.967</DateModified>
+      <IsEnabled>true</IsEnabled>
+      <Id>0</Id>
+      <OriginalState>H4sIAAAAAAAEALXUwU7DMAwA0F+Zeqfp2K3qKjHGYWLVEEWwq5c6qyGNpySllK9nDRK3cZiUSy6Wny07SXFnLYw79YjjK+ged8p5S+YIZnwZTzj76rRxy6T1/pQL4WSLHbi0I2nZsfKp5E7cZtlCzDNRoyXQ9A2e2IgAu+RXyOnPGIYhHRYp2+OUOBf7alsH9oaM82AkJmVxoZ0QKN/YfijNwxoVGZqKbZpCTJEiJM0oN6SXibc9JqIMoYva5TJ76HQEtoJ3tjFcMlHcVU86xnif8ZPceXcR6I17MHDQGKPtmnsrccsy3PIIBZ76gybXYrMaI+hr8Hhv8XzGGM6kV9yQoij8tc9c/P/JlT9at+wSBQUAAA==</OriginalState>
+      <SecureState>H4sIAAAAAAAEAD3MQQrCMBAAwK9I7mZTeysqeFbpoSJel5C0C01Ssisxvl6s4ANm9qecsfb+7Ood56frPUumOGKst7q4zSvMkQ9qElk6ALaTC8g6kM2JkxdtU4CdMS00BgaXCWd6o1CKsMasfkNH/6OUokurUx6/sIHH9TKs7ZYiC0brFBw/juQnSpcAAAA=</SecureState>
+      <EntityState>0</EntityState>
+    </EnabledWorkflowDefinitionVersion>
+  </ExportedSequences>
+  <FormsBuilderVersion>3.6.2.1</FormsBuilderVersion>
+  <ExportedDateTimeInUtc>05/14/2020 11:37:44</ExportedDateTimeInUtc>
+  <DbConnectionString>data source=10.108.30.68;initial catalog=test_100537;User ID=100537dbtest;Password=!tiEvW{cvCcm;Persist Security Info=False;Pooling=True;MultipleActiveResultSets=True;Application Name=Forms Builder</DbConnectionString>
+</Export>
