@@ -1,4 +1,4 @@
-﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="PassFailOptInForm_SEQUENCE" this:PassFailOptInForm_SEQUENCE.defaultGridItems="[new SerializableDynamicObject(5){ new SerializableDynamicObject With { .DataDictionary = new Dictionary (Of String, Object) From {{&quot;CourseNumber&quot;,&quot;&quot;}, { &quot;CourseName&quot;, &quot;&quot;}, { &quot;Term&quot;, &quot;&quot;}, {&quot;Id&quot;,1}}},new SerializableDynamicObject With { .DataDictionary = new Dictionary (Of String, Object) From {{&quot;CourseNumber&quot;,&quot;&quot;}, { &quot;CourseName&quot;, &quot;&quot;}, { &quot;Term&quot;, &quot;&quot;}, {&quot;Id&quot;,2}}},new SerializableDynamicObject With { .DataDictionary = new Dictionary (Of String, Object) From {{&quot;CourseNumber&quot;,&quot;&quot;}, { &quot;CourseName&quot;, &quot;&quot;}, { &quot;Term&quot;, &quot;&quot;}, {&quot;Id&quot;,3}}},new SerializableDynamicObject With { .DataDictionary = new Dictionary (Of String, Object) From {{&quot;CourseNumber&quot;,&quot;&quot;}, { &quot;CourseName&quot;, &quot;&quot;}, { &quot;Term&quot;, &quot;&quot;}, {&quot;Id&quot;,4}}},new SerializableDynamicObject With { .DataDictionary = new Dictionary (Of String, Object) From {{&quot;CourseNumber&quot;,&quot;&quot;}, { &quot;CourseName&quot;, &quot;&quot;}, { &quot;Term&quot;, &quot;&quot;}, {&quot;Id&quot;,5}}},new SerializableDynamicObject With { .DataDictionary = new Dictionary (Of String, Object) From {{&quot;CourseNumber&quot;,&quot;&quot;}, { &quot;CourseName&quot;, &quot;&quot;}, { &quot;Term&quot;, &quot;&quot;}, {&quot;Id&quot;,6}}}}]"
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="PassFailOptInForm_SEQUENCE" this:PassFailOptInForm_SEQUENCE.defaultCourseListForGrid="[new SerializableDynamicObject(5){ new SerializableDynamicObject With { .DataDictionary = new Dictionary (Of String, Object) From {{&quot;CourseNumber&quot;,&quot;&quot;}, { &quot;CourseName&quot;, &quot;&quot;}, { &quot;Term&quot;, &quot;&quot;}, {&quot;Id&quot;,1}}},new SerializableDynamicObject With { .DataDictionary = new Dictionary (Of String, Object) From {{&quot;CourseNumber&quot;,&quot;&quot;}, { &quot;CourseName&quot;, &quot;&quot;}, { &quot;Term&quot;, &quot;&quot;}, {&quot;Id&quot;,2}}},new SerializableDynamicObject With { .DataDictionary = new Dictionary (Of String, Object) From {{&quot;CourseNumber&quot;,&quot;&quot;}, { &quot;CourseName&quot;, &quot;&quot;}, { &quot;Term&quot;, &quot;&quot;}, {&quot;Id&quot;,3}}},new SerializableDynamicObject With { .DataDictionary = new Dictionary (Of String, Object) From {{&quot;CourseNumber&quot;,&quot;&quot;}, { &quot;CourseName&quot;, &quot;&quot;}, { &quot;Term&quot;, &quot;&quot;}, {&quot;Id&quot;,4}}},new SerializableDynamicObject With { .DataDictionary = new Dictionary (Of String, Object) From {{&quot;CourseNumber&quot;,&quot;&quot;}, { &quot;CourseName&quot;, &quot;&quot;}, { &quot;Term&quot;, &quot;&quot;}, {&quot;Id&quot;,5}}},new SerializableDynamicObject With { .DataDictionary = new Dictionary (Of String, Object) From {{&quot;CourseNumber&quot;,&quot;&quot;}, { &quot;CourseName&quot;, &quot;&quot;}, { &quot;Term&quot;, &quot;&quot;}, {&quot;Id&quot;,6}}}}]"
  xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
  xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
  xmlns:cce="clr-namespace:Cmc.Core.Eventing;assembly=Cmc.Core"
@@ -33,7 +33,7 @@
     <x:Property Name="_CourseGrid_CourseNumber" Type="InOutArgument(x:String)" />
     <x:Property Name="_CourseGrid_CourseName" Type="InOutArgument(x:String)" />
     <x:Property Name="_CourseGrid_Term" Type="InOutArgument(x:String)" />
-    <x:Property Name="defaultGridItems" Type="InArgument(cnfe:SerializableDynamicObject[])" />
+    <x:Property Name="defaultCourseListForGrid" Type="InArgument(cnfe:SerializableDynamicObject[])" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -95,7 +95,7 @@
                 <OutArgument x:TypeArguments="x:String">[logPrefix]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[string.Format("{0} WF Id-{1} StudentId-{2}",logPrefix,workFlowId,studentId)]</InArgument>
+                <InArgument x:TypeArguments="x:String">[string.Format("{0} WFId:{1} StudentId:{2}",logPrefix,workFlowId,studentId)]</InArgument>
               </Assign.Value>
             </Assign>
             <ccwae:GetEntity x:TypeArguments="cnce:StudentEntity" EntityId="[studentId]" sap2010:WorkflowViewState.IdRef="GetEntity`1_3" Result="[studentEntity]" />
@@ -104,7 +104,7 @@
                 <OutArgument x:TypeArguments="cnfe:SerializableDynamicObject[]">[CourseGrid]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="cnfe:SerializableDynamicObject[]">[defaultGridItems]</InArgument>
+                <InArgument x:TypeArguments="cnfe:SerializableDynamicObject[]">[defaultCourseListForGrid]</InArgument>
               </Assign.Value>
             </Assign>
             <Assign sap2010:WorkflowViewState.IdRef="Assign_7">
@@ -130,6 +130,13 @@
             <Transition.Trigger>
               <Sequence sap2010:WorkflowViewState.IdRef="Sequence_11">
                 <cnfw:WaitForFormBookmark DisplayName="Submit" DisplayOrder="0" sap2010:WorkflowViewState.IdRef="WaitForFormBookmark_1" TransitionType="Default" />
+                <If Condition="[String.IsNullOrEmpty(signature)]" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If.Then>
+                    <Sequence DisplayName="Check Signature" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <ccwa:CreateValidationItem sap2010:WorkflowViewState.IdRef="CreateValidationItem_1" Message="Signature is required" Messages="[formInstance.ValidationMessages]" />
+                    </Sequence>
+                  </If.Then>
+                </If>
               </Sequence>
             </Transition.Trigger>
             <Transition.To>
@@ -156,7 +163,7 @@
                             </Assign.Value>
                           </Assign>
                           <cnfw:PrintUrlToPdf Forms="{x:Null}" sap2010:WorkflowViewState.IdRef="PrintUrlToPdf_4" PdfDocument="[formsDocument]" Url="[urlString]" ValidationMessages="[formInstance.ValidationMessages]" />
-                          <cncw:CreateDocument AwardYear="{x:Null}" ExpirationDate="{x:Null}" ModuleId="{x:Null}" SentDate="{x:Null}" ValidationMessages="{x:Null}" WorkFlowInstanceId="{x:Null}" Document="[documentEntity]" DocumentImage="[formsDocument]" DocumentStatusId="15" DocumentTypeId="124" DueDate="[DateTime.Today.AddDays(7)]" sap2010:WorkflowViewState.IdRef="CreateDocument_4" ImageFileName="[&quot;PassFailOptInForm_&quot; +studentEntity.StudentNumber +&quot;.pdf&quot;]" Note="Form Document Uploaded from Workflow" ReceivedDate="[DateTime.Today]" RequestDate="[DateTime.Today]" StudentId="[studentEntity.Id]" />
+                          <cncw:CreateDocument AwardYear="{x:Null}" ExpirationDate="{x:Null}" ModuleId="{x:Null}" SentDate="{x:Null}" ValidationMessages="{x:Null}" WorkFlowInstanceId="{x:Null}" Document="[documentEntity]" DocumentImage="[formsDocument]" DocumentStatusId="15" DocumentTypeId="328" DueDate="[DateTime.Today.AddDays(7)]" sap2010:WorkflowViewState.IdRef="CreateDocument_4" ImageFileName="[&quot;PassFailOptInForm_&quot; +studentEntity.StudentNumber +&quot;.pdf&quot;]" Note="Form Document Uploaded from Workflow" ReceivedDate="[DateTime.Today]" RequestDate="[DateTime.Today]" StudentId="[studentEntity.Id]" />
                           <TryCatch sap2010:WorkflowViewState.IdRef="TryCatch_4">
                             <TryCatch.Try>
                               <cncw:SaveDocument Document="[documentEntity]" sap2010:WorkflowViewState.IdRef="SaveDocument_4" ValidationMessages="[formInstance.ValidationMessages]" />
@@ -204,9 +211,7 @@
           </Transition>
           <Transition DisplayName="Cancel" sap2010:WorkflowViewState.IdRef="Transition_2">
             <Transition.Trigger>
-              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_10">
-                <cnfw:WaitForFormBookmark DisplayName="Cancel" DisplayOrder="0" sap2010:WorkflowViewState.IdRef="WaitForFormBookmark_3" TransitionType="Default" />
-              </Sequence>
+              <cnfw:WaitForFormBookmark DisplayName="Cancel" DisplayOrder="0" sap2010:WorkflowViewState.IdRef="WaitForFormBookmark_4" TransitionType="Default" />
             </Transition.Trigger>
             <Transition.To>
               <x:Reference>__ReferenceID0</x:Reference>
@@ -235,8 +240,9 @@
       <Variable x:TypeArguments="x:Int32" Name="studentId" />
       <Variable x:TypeArguments="x:String" Default="PassFailOptInForm : : " Name="logPrefix" />
       <Variable x:TypeArguments="x:String" Name="submitSuccess" />
+      <Variable x:TypeArguments="cce:ValidationMessageCollection" Name="validationMessages" />
     </StateMachine.Variables>
-    <sads:DebugSymbol.Symbol>d39cXENsaWVudFxDJFxVc2Vyc1xrZXNraWxsYVxEZXNrdG9wXE5ldyBmb2xkZXIgKDIpXENtYy5Db3JlLkV2ZW50aW5nLlZvaWRFbnRpdHlfQ29uc3RydWN0ZWRFdmVudF9QYXNzRmFpbE9wdEluRm9ybV9TRVFVRU5DRS54YW1sTgGBAQGiDAECVgPwARICAQHsATTsAUwCAWlYB+QBDwIBMYgBD7UBFwIBAloLfhYCAUaDAQ+FARoCAUTLASPLAVICAUO4AQ/JARoCATrPAQ/RARoCATjXAQ/gARoCATOKAROzAR4CAQRbDVt7AgFmXA1c3AECAWBdDWQWAgFZZQ1lpQECAVRmDW0WAgFPbg11FgIBS3YNfRYCAUeEARGEAaQBAgFFuQERwAEaAgE/wQERyAEaAgE70AER0AGkAQIBOdgBEd8BGgIBNIsBFYsBkwECATCMARWyARoCAQVbalt4AgFnXGtchAECAWVctgFc2QECAWRcjgFcogECAWNcVFxhAgFhYjhihQECAVxfOV9EAgFaZUxlWQIBV2WRAWWiAQIBVWtQa2ICAVJoUWhdAgFQczhzbAIBTnA5cEYCAUx7OHtNAgFKeDl4RwIBSL4BPL4BYgIBQrsBPbsBSQIBQMYBPMYBQAIBPsMBPcMBTAIBPN0BPN0BbgIBN9oBPdoBSQIBNYwBI4wBRQIBBo4BGbABJAIBCJQBG5QBkQECAS2VARuVAVICASyWARudASQCASieARueAdsBAgEinwEbnwHvBAIBFaABG64BJgIBDK8BG68BjwECAQmUAVuUAY4BAgEumwFGmwHAAQIBK5gBR5gBUgIBKZ4Bfp4BjwECASaeAbUBngHYAQIBJZ4BlAGeAaEBAgEjnwGkAp8BqQICASGfAe0BnwH+AQIBH58BzAGfAd4BAgEdnwHoA58BjgQCARyfAZACnwGUAgIBG58BnASfAa4EAgEanwG7BJ8BzQQCARmfAbICnwHPAgIBGJ8BkQOfAeIDAgEXnwHYBJ8B7AQCARaiAR+iAbgBAgERqgEjqgG7AQIBDa8BW68BjAECAQqiATuiAU0CAROiAZIBogG1AQIBEqoBcaoBuAECAQ4=</sads:DebugSymbol.Symbol>
+    <sads:DebugSymbol.Symbol>d4IBXFxDbGllbnRcQyRcVXNlcnNca2Vza2lsbGFcRGVza3RvcFxwcm9qZWN0c1xQYXNzRmFpbFxDbWMuQ29yZS5FdmVudGluZy5Wb2lkRW50aXR5X0NvbnN0cnVjdGVkRXZlbnRfUGFzc0ZhaWxPcHRJbkZvcm1fU0VRVUVOQ0UueGFtbFMBiQEBqgwBAlYD9gESAgEB8QE08QFMAgFvWAfpAQ8CATGPAQ+8ARcCAQJaC34WAgFMgwEPjAEaAgFD0gEj0gFSAgFCvwEP0AEaAgE51gEP1gGiAQIBONwBD+UBGgIBM5EBE7oBHgIBBFsNW3sCAWxcDVzcAQIBZl0NZBYCAV9lDWWlAQIBWmYNbRYCAVVuDXUWAgFRdg19FgIBTYQBEYQBpAECAUuFARGLARYCAUTAARHHARoCAT7IARHPARoCATrdARHkARoCATSSARWSAZMBAgEwkwEVuQEaAgEFW2pbeAIBbVxrXIQBAgFrXLYBXNkBAgFqXI4BXKIBAgFpXFRcYQIBZ2I4YoQBAgFiXzlfRAIBYGVMZVkCAV1lkQFlogECAVtrUGtqAgFYaFFoXQIBVnM4c2wCAVRwOXBGAgFSezh7TQIBUHg5eEcCAU6FAR+FAUICAUWHARWJASACAUfFATzFAWICAUHCAT3CAUkCAT/NATzNAUACAT3KAT3KAUwCATviATziAW4CATffAT3fAUkCATWTASOTAUUCAQaVARm3ASQCAQiIAReIAboBAgFImwEbmwGRAQIBLZwBG5wBUgIBLJ0BG6QBJAIBKKUBG6UB2wECASKmARumAe8EAgEVpwEbtQEmAgEMtgEbtgGPAQIBCYgBc4gBigECAUqIAZQBiAG3AQIBSZsBW5sBjgECAS6iAUaiAcABAgErnwFHnwFSAgEppQF+pQGPAQIBJqUBtQGlAdgBAgElpQGUAaUBoQECASOmAaQCpgGpAgIBIaYB7QGmAf4BAgEfpgHMAaYB3gECAR2mAegDpgGOBAIBHKYBkAKmAZQCAgEbpgGcBKYBrgQCARqmAbsEpgHNBAIBGaYBsgKmAc8CAgEYpgGRA6YB4gMCARemAdgEpgHsBAIBFqkBH6kBuAECARGxASOxAbsBAgENtgFbtgGMAQIBCqkBO6kBTQIBE6kBkgGpAbUBAgESsQFxsQG4AQIBDg==</sads:DebugSymbol.Symbol>
   </StateMachine>
   <sap2010:WorkflowViewState.ViewStateManager>
     <sap2010:ViewStateManager>
@@ -254,23 +260,32 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="WaitForFormBookmark_1" sap:VirtualizedContainerService.HintSize="200,22" />
-      <sap2010:ViewStateData Id="Sequence_11" sap:VirtualizedContainerService.HintSize="222,146">
+      <sap2010:ViewStateData Id="WaitForFormBookmark_1" sap:VirtualizedContainerService.HintSize="464,22" />
+      <sap2010:ViewStateData Id="CreateValidationItem_1" sap:VirtualizedContainerService.HintSize="314,111" />
+      <sap2010:ViewStateData Id="Sequence_14" sap:VirtualizedContainerService.HintSize="336,235">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="WaitForFormBookmark_2" sap:VirtualizedContainerService.HintSize="565,22" />
-      <sap2010:ViewStateData Id="LogLine_17" sap:VirtualizedContainerService.HintSize="418,111" />
-      <sap2010:ViewStateData Id="Persist_4" sap:VirtualizedContainerService.HintSize="418,22" />
-      <sap2010:ViewStateData Id="Assign_14" sap:VirtualizedContainerService.HintSize="418,60" />
-      <sap2010:ViewStateData Id="PrintUrlToPdf_4" sap:VirtualizedContainerService.HintSize="418,22" />
-      <sap2010:ViewStateData Id="CreateDocument_4" sap:VirtualizedContainerService.HintSize="418,381" />
+      <sap2010:ViewStateData Id="If_2" sap:VirtualizedContainerService.HintSize="464,383" />
+      <sap2010:ViewStateData Id="Sequence_11" sap:VirtualizedContainerService.HintSize="486,569">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WaitForFormBookmark_2" sap:VirtualizedContainerService.HintSize="561,22" />
+      <sap2010:ViewStateData Id="LogLine_17" sap:VirtualizedContainerService.HintSize="414,111" />
+      <sap2010:ViewStateData Id="Persist_4" sap:VirtualizedContainerService.HintSize="414,22" />
+      <sap2010:ViewStateData Id="Assign_14" sap:VirtualizedContainerService.HintSize="414,60" />
+      <sap2010:ViewStateData Id="PrintUrlToPdf_4" sap:VirtualizedContainerService.HintSize="414,22" />
+      <sap2010:ViewStateData Id="CreateDocument_4" sap:VirtualizedContainerService.HintSize="414,381" />
       <sap2010:ViewStateData Id="SaveDocument_4" sap:VirtualizedContainerService.HintSize="200,22" />
       <sap2010:ViewStateData Id="LogLine_18" sap:VirtualizedContainerService.HintSize="214,111" />
-      <sap2010:ViewStateData Id="Catch`1_4" sap:VirtualizedContainerService.HintSize="404,21">
+      <sap2010:ViewStateData Id="Catch`1_4" sap:VirtualizedContainerService.HintSize="400,21">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -278,17 +293,17 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="TryCatch_4" sap:VirtualizedContainerService.HintSize="418,287" />
-      <sap2010:ViewStateData Id="LogLine_19" sap:VirtualizedContainerService.HintSize="418,111" />
-      <sap2010:ViewStateData Id="Sequence_13" sap:VirtualizedContainerService.HintSize="440,1358">
+      <sap2010:ViewStateData Id="TryCatch_4" sap:VirtualizedContainerService.HintSize="414,183" />
+      <sap2010:ViewStateData Id="LogLine_19" sap:VirtualizedContainerService.HintSize="414,111" />
+      <sap2010:ViewStateData Id="Sequence_13" sap:VirtualizedContainerService.HintSize="436,1254">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="565,1506" />
-      <sap2010:ViewStateData Id="Sequence_6" sap:VirtualizedContainerService.HintSize="587,1692">
+      <sap2010:ViewStateData Id="If_1" sap:VirtualizedContainerService.HintSize="561,1402" />
+      <sap2010:ViewStateData Id="Sequence_6" sap:VirtualizedContainerService.HintSize="583,1588">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -298,7 +313,7 @@
       <sap2010:ViewStateData Id="State_1" sap:VirtualizedContainerService.HintSize="114,61">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">253,289.5</av:Point>
+            <av:Point x:Key="ShapeLocation">233,259.5</av:Point>
             <av:Size x:Key="ShapeSize">114,61</av:Size>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
@@ -313,23 +328,16 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Transition_1" sap:VirtualizedContainerService.HintSize="430,773">
+      <sap2010:ViewStateData Id="Transition_1" sap:VirtualizedContainerService.HintSize="528,1196">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Int32 x:Key="SrcConnectionPointIndex">3</x:Int32>
             <x:Int32 x:Key="DestConnectionPointIndex">2</x:Int32>
-            <av:PointCollection x:Key="ConnectorLocation">238.7,180.5 238.7,210.5 258.7,210.5 258.7,289.5</av:PointCollection>
+            <av:PointCollection x:Key="ConnectorLocation">238.7,170.5 238.7,259.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="WaitForFormBookmark_3" sap:VirtualizedContainerService.HintSize="200,22" />
-      <sap2010:ViewStateData Id="Sequence_10" sap:VirtualizedContainerService.HintSize="222,146">
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WaitForFormBookmark_4" sap:VirtualizedContainerService.HintSize="200,22" />
       <sap2010:ViewStateData Id="Assign_11" sap:VirtualizedContainerService.HintSize="242,60" />
       <sap2010:ViewStateData Id="Sequence_8" sap:VirtualizedContainerService.HintSize="264,184">
         <sap:WorkflowViewStateService.ViewState>
@@ -338,19 +346,19 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
-      <sap2010:ViewStateData Id="Transition_2" sap:VirtualizedContainerService.HintSize="430,673">
+      <sap2010:ViewStateData Id="Transition_2" sap:VirtualizedContainerService.HintSize="430,587">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:PointCollection x:Key="ConnectorLocation">318.5,180.5 318.5,210.5 321.4,210.5 321.4,289.5</av:PointCollection>
+            <av:PointCollection x:Key="ConnectorLocation">318.5,170.5 318.5,259.5</av:PointCollection>
             <x:Int32 x:Key="SrcConnectionPointIndex">59</x:Int32>
-            <x:Int32 x:Key="DestConnectionPointIndex">46</x:Int32>
+            <x:Int32 x:Key="DestConnectionPointIndex">58</x:Int32>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
       <sap2010:ViewStateData Id="State_2" sap:VirtualizedContainerService.HintSize="114,61">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <av:Point x:Key="ShapeLocation">233,119.5</av:Point>
+            <av:Point x:Key="ShapeLocation">233,109.5</av:Point>
             <av:Size x:Key="ShapeSize">114,61</av:Size>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
@@ -363,7 +371,7 @@
             <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
             <x:Double x:Key="StateContainerWidth">600</x:Double>
             <x:Double x:Key="StateContainerHeight">600</x:Double>
-            <av:PointCollection x:Key="ConnectorLocation">286,77.5 286,107.5 295.7,107.5 295.7,119.5</av:PointCollection>
+            <av:PointCollection x:Key="ConnectorLocation">296,77.5 296,107.5 295.7,107.5 295.7,109.5</av:PointCollection>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </sap2010:ViewStateData>
