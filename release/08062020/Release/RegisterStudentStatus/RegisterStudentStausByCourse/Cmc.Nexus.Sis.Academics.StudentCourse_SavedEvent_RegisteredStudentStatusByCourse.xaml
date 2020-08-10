@@ -1,0 +1,647 @@
+<Activity mc:Ignorable="sap sap2010 sads" x:Class="RegisteredStudentStatusByCourse"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:cce="clr-namespace:Cmc.Core.Eventing;assembly=Cmc.Core"
+ xmlns:ccwa="clr-namespace:Cmc.Core.Workflow.Activities;assembly=Cmc.Core.Workflow"
+ xmlns:ccwae="clr-namespace:Cmc.Core.Workflow.Activities.EntityModel;assembly=Cmc.Core.Workflow"
+ xmlns:cnae="clr-namespace:Cmc.Nexus.Academics.Entities;assembly=Cmc.Nexus.Academics.Contracts"
+ xmlns:cncs="clr-namespace:Cmc.Nexus.Common.Services;assembly=Cmc.Nexus.Common.Contracts"
+ xmlns:cncw="clr-namespace:Cmc.Nexus.Common.Workflow;assembly=Cmc.Nexus.Common.Workflow"
+ xmlns:cnsa="clr-namespace:Cmc.Nexus.Sis.Academics;assembly=Cmc.Nexus.Contracts"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:s="clr-namespace:System;assembly=mscorlib"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="entity" Type="InOutArgument(cnsa:StudentCourse)" />
+    <x:Property Name="args" Type="InOutArgument(s:EventArgs)" />
+    <x:Property Name="event" Type="InOutArgument(cce:SavedEvent)" />
+    <x:Property Name="phase" Type="InOutArgument(x:Int64)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap2010:WorkflowViewState.IdRef>Registered_SchoolStatusChange_BasedOnCourseStatus_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Cmc.Core.Eventing</x:String>
+      <x:String>Cmc.Nexus.Sis.Academics</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Cmc.Core.EntityModel</x:String>
+      <x:String>Cmc.Core.ComponentModel</x:String>
+      <x:String>Cmc.Nexus.Academics.Entities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>Cmc.Nexus.Common.Services</x:String>
+      <x:String>Cmc.Nexus.Common.Entities</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Cmc.Core</AssemblyReference>
+      <AssemblyReference>Cmc.Nexus.Contracts</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Cmc.Nexus.Academics.Contracts</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Cmc.Nexus.Common.Contracts</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Flowchart sap2010:WorkflowViewState.IdRef="Flowchart_1">
+    <Flowchart.Variables>
+      <Variable x:TypeArguments="s:Guid" Name="workFlowId" />
+      <Variable x:TypeArguments="x:String" Default="REG-COURSE WF : " Name="logPrefix" />
+      <Variable x:TypeArguments="x:String" Name="reason" />
+      <Variable x:TypeArguments="cnae:StudentEnrollmentPeriodEntity" Name="studentEnrollmentPeriod" />
+      <Variable x:TypeArguments="x:String" Name="isValidToMoveStatusForward" />
+      <Variable x:TypeArguments="x:Int32" Name="registeredCourseStatusCount" />
+      <Variable x:TypeArguments="x:String" Name="isValidToReverseStatusBack" />
+      <Variable x:TypeArguments="x:Int32" Name="finalSchoolStatus" />
+      <Variable x:TypeArguments="x:Int32" Name="adEnrollID" />
+      <Variable x:TypeArguments="x:Int32" Name="intermediateSySchoolStatusID" />
+      <Variable x:TypeArguments="x:Int32" Name="syStatusID" />
+    </Flowchart.Variables>
+    <Flowchart.StartNode>
+      <FlowStep x:Name="__ReferenceID1" sap2010:WorkflowViewState.IdRef="FlowStep_8">
+        <Sequence DisplayName="Init" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <ccwa:GetWorkflowInstanceId sap2010:WorkflowViewState.IdRef="GetWorkflowInstanceId_1" Result="[workFlowId]" />
+          <Assign sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[logPrefix]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[String.Format("{0}: Student Id : {1} WorkFlowId : {2}: ",logPrefix,entity.StudentId,workFlowId.ToString)]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ccwa:LogLine sap2010:WorkflowViewState.IdRef="LogLine_1" Text="[logPrefix+&quot;************Begin WorkFlow************&quot;]" />
+        </Sequence>
+        <FlowStep.Next>
+          <FlowStep x:Name="__ReferenceID2" sap2010:WorkflowViewState.IdRef="FlowStep_7">
+            <Sequence DisplayName="Get Core Condition Flags" sap2010:WorkflowViewState.IdRef="Sequence_4">
+              <Sequence DisplayName="Get AdenrollID" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                <ccwa:LogLine sap2010:WorkflowViewState.IdRef="LogLine_17" Text="[logPrefix +  &quot;---Begin Get AdenrollID---&quot;]" />
+                <ccwa:ExecuteDataReader CommandText="[&quot;SELECT Distinct AdenrollID FROM AdenrollSched (Nolock) WHERE AdenrollSchedID = &quot; &amp; Entity.id]" sap2010:WorkflowViewState.IdRef="ExecuteDataReader_4">
+                  <ccwa:ExecuteDataReader.Body>
+                    <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+                      <ActivityAction.Argument>
+                        <DelegateInArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="CurrentRow" />
+                      </ActivityAction.Argument>
+                      <Assign DisplayName="Assign AdenrollID" sap2010:WorkflowViewState.IdRef="Assign_58">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[adEnrollID]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[DirectCast(CurrentRow("AdenrollID"),int32)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </ActivityAction>
+                  </ccwa:ExecuteDataReader.Body>
+                </ccwa:ExecuteDataReader>
+                <ccwa:LogLine sap2010:WorkflowViewState.IdRef="LogLine_18" Text="[logPrefix + &quot; AdEnrollID = &quot; &amp; adEnrollID &amp; &quot;---End Get AdenrollID---&quot;]" />
+              </Sequence>
+              <ccwa:LogLine sap2010:WorkflowViewState.IdRef="LogLine_21" Text="[logPrefix + &quot; Getting  studentEnrollmentPeriod  for &quot; + adEnrollID.ToString]" />
+              <ccwae:GetEntity x:TypeArguments="cnae:StudentEnrollmentPeriodEntity" EntityId="[AdenrollID]" sap2010:WorkflowViewState.IdRef="GetEntity`1_1" Result="[studentEnrollmentPeriod]" />
+              <ccwa:LogLine sap2010:WorkflowViewState.IdRef="LogLine_22" Text="[logPrefix +  &quot; studentEnrollmentPeriod: &quot; +Newtonsoft.Json.JsonConvert.SerializeObject(studentEnrollmentPeriod, Newtonsoft.Json.Formatting.Indented)]" />
+              <ccwa:ExecuteDataReader CommandText="[string.Format(&quot;EXECUTE [customer].[SPROC_Registered_SchoolStatus_GetConfiguration] {0}&quot;,adEnrollID)]" DisplayName="Determine Course and Status" sap2010:WorkflowViewState.IdRef="ExecuteDataReader_1">
+                <ccwa:ExecuteDataReader.Body>
+                  <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="CurrentRow" />
+                    </ActivityAction.Argument>
+                    <Sequence sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <Assign sap2010:WorkflowViewState.IdRef="Assign_12">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[isValidToMoveStatusForward]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[Directcast(CurrentRow("IsValidToMoveStatusForward"),string)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap2010:WorkflowViewState.IdRef="Assign_14">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[isValidToReverseStatusBack]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[Directcast(CurrentRow("IsValidToReverseStatusBack"),string)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <Assign sap2010:WorkflowViewState.IdRef="Assign_13">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[registeredCourseStatusCount]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[Directcast(CurrentRow("RegisteredCourseStatusCount"),Int32)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ccwa:LogLine sap2010:WorkflowViewState.IdRef="LogLine_4" Text="[logPrefix+Environment.NewLine+&quot;IsValidToMoveStatusForward=&quot;+isValidToMoveStatusForward+Environment.NewLine+&quot;IsValidToReverseStatusBack=&quot;+isValidToReverseStatusBack+Environment.NewLine+&quot;RegisteredSchoolStatusCount=&quot;+registeredCourseStatusCount.ToString+Environment.NewLine+&quot;CurrentStatus=&quot;+studentEnrollmentPeriod.SchoolStatusId.ToString]" />
+                    </Sequence>
+                  </ActivityAction>
+                </ccwa:ExecuteDataReader.Body>
+              </ccwa:ExecuteDataReader>
+            </Sequence>
+            <FlowStep.Next>
+              <FlowDecision x:Name="__ReferenceID3" Condition="[(entity.HasChanged and isValidToMoveStatusForward=&quot;True&quot; and registeredCourseStatusCount&gt;0) or (entity.HasChanged and registeredCourseStatusCount=0 and isValidToReverseStatusBack=&quot;True&quot;)]" DisplayName="Move Forward(Registered status) or Move Backward(provisional)" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                <FlowDecision.True>
+                  <FlowStep x:Name="__ReferenceID8" sap2010:WorkflowViewState.IdRef="FlowStep_14">
+                    <Sequence DisplayName="Get FinalSchoolStatus" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <ccwa:LogLine sap2010:WorkflowViewState.IdRef="LogLine_13" Text="[logPrefix+&quot; Get Final School Status.. &quot;]" />
+                      <Sequence DisplayName="Get Final School Status Info" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                        <ccwa:LogLine sap2010:WorkflowViewState.IdRef="LogLine_14" Text="[logPrefix+String.Format(&quot;Select FinalSySchoolStatusID,SyStatusID from customer.RegisteredStatusByCourseMap Where InitialSySchoolStatusID='{0}' and CourseSelected='{1}'&quot;,studentEnrollmentPeriod.SchoolStatusId, if( (registeredCourseStatusCount &gt;0), &quot;Y&quot;,&quot;N&quot;))]" />
+                        <ccwa:ExecuteDataReader CommandText="[String.Format(&quot;Select FinalSySchoolStatusID,SyStatusID from customer.RegisteredStatusByCourseMap Where InitialSySchoolStatusID='{0}' and CourseSelected='{1}'&quot;,studentEnrollmentPeriod.SchoolStatusId, if( (registeredCourseStatusCount &gt;0), &quot;Y&quot;,&quot;N&quot;))]" DisplayName="Get Final School Status from DB" sap2010:WorkflowViewState.IdRef="ExecuteDataReader_3">
+                          <ccwa:ExecuteDataReader.Body>
+                            <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="CurrentRow" />
+                              </ActivityAction.Argument>
+                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                <Assign sap2010:WorkflowViewState.IdRef="Assign_57">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Int32">[finalSchoolStatus]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Int32">[Directcast(CurrentRow("FinalSySchoolStatusID"),Integer)]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <Assign sap2010:WorkflowViewState.IdRef="Assign_61">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Int32">[syStatusID]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Int32">[Directcast(CurrentRow("SyStatusID"),Integer)]</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </ActivityAction>
+                          </ccwa:ExecuteDataReader.Body>
+                        </ccwa:ExecuteDataReader>
+                        <ccwa:LogLine sap2010:WorkflowViewState.IdRef="LogLine_20" Text="[logPrefix+String.Format(&quot; FinalSchoolStatus={0} SyStatusID={1}&quot;,finalSchoolStatus.ToString+Environment.NewLine,syStatusID)]" />
+                      </Sequence>
+                      <Sequence DisplayName="Get Future Start Category status" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="cncs:ReferenceItem" Name="refReEntryStatus" />
+                        </Sequence.Variables>
+                        <cncw:LookupReferenceItem ValidationMessages="{x:Null}" DisplayName="Lookup Re-Entry School Status" sap2010:WorkflowViewState.IdRef="LookupReferenceItem_1" ItemId="7" ReferenceItem="[refReEntryStatus]" ReferenceItemType="Cmc.Nexus.Models.Common.SystemSchoolStatus" />
+                        <If Condition="[syStatusID=refReEntryStatus.Id]" DisplayName="If- Re-Entry" sap2010:WorkflowViewState.IdRef="If_16">
+                          <If.Then>
+                            <Sequence DisplayName="Change Status from Re-Entry Category to Future Start Category" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                              <ccwa:ExecuteDataReader CommandText="[String.Format(&quot;Select FinalSySchoolStatusID from customer.RegisteredStatusByCategoryMap Where InitialSySchoolStatusID={0}&quot;,studentEnrollmentPeriod.SchoolStatusId)]" DisplayName="Get FutureStart Category Status" sap2010:WorkflowViewState.IdRef="ExecuteDataReader_6">
+                                <ccwa:ExecuteDataReader.Body>
+                                  <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="CurrentRow" />
+                                    </ActivityAction.Argument>
+                                    <Assign sap2010:WorkflowViewState.IdRef="Assign_59">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Int32">[intermediateSySchoolStatusID]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Int32">[Directcast(CurrentRow("FinalSySchoolStatusID"),Integer)]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </ActivityAction>
+                                </ccwa:ExecuteDataReader.Body>
+                              </ccwa:ExecuteDataReader>
+                              <ccwa:ExecuteDataReader CommandText="[String.Format(&quot;Update AdEnroll Set SySchoolStatusID={0} Where AdEnrollID={1}&quot;,intermediateSySchoolStatusID,adEnrollID)]" DisplayName="Update Status- ReEntry Category to Future Start Category" sap2010:WorkflowViewState.IdRef="ExecuteDataReader_7">
+                                <ccwa:ExecuteDataReader.Body>
+                                  <ActivityAction x:TypeArguments="scg:Dictionary(x:String, x:Object)">
+                                    <ActivityAction.Argument>
+                                      <DelegateInArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" Name="CurrentRow" />
+                                    </ActivityAction.Argument>
+                                  </ActivityAction>
+                                </ccwa:ExecuteDataReader.Body>
+                              </ccwa:ExecuteDataReader>
+                              <ccwa:LogLine sap2010:WorkflowViewState.IdRef="LogLine_19" Text="[logPrefix+&quot; Intermediate Status = &quot;+intermediateSySchoolStatusID.ToString]" />
+                            </Sequence>
+                          </If.Then>
+                        </If>
+                      </Sequence>
+                      <ccwa:LogLine sap2010:WorkflowViewState.IdRef="LogLine_15" Text="[logPrefix+&quot;Status Change from&quot; +Environment.NewLine+&quot;Intermediate School Status - &quot;+intermediateSySchoolStatusID.ToString+Environment.NewLine+&quot;Final School Status - &quot;+finalSchoolStatus.ToString]" />
+                    </Sequence>
+                    <FlowStep.Next>
+                      <FlowStep x:Name="__ReferenceID4" sap2010:WorkflowViewState.IdRef="FlowStep_4">
+                        <Sequence DisplayName="Save FinalSchoolStatus" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <TryCatch sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                            <TryCatch.Try>
+                              <Sequence DisplayName="Update Student Status" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="cce:ValidationMessageCollection" Name="validationMessages" />
+                                </Sequence.Variables>
+                                <cncw:UpdateStudentStatusToEnrolled ReasonId="{x:Null}" Comment="[&quot;Status Changed  to &quot;+FinalSchoolStatus.ToString +&quot;by Workflow.&quot;]" EnrollId="[studentEnrollmentPeriod.Id]" sap2010:WorkflowViewState.IdRef="UpdateStudentStatusToEnrolled_1" StudentId="[entity.StudentId.Value]" StudentStatusId="[finalSchoolStatus]" ValidationMessages="[validationMessages]" />
+                                <If Condition="[validationMessages.Count&gt;0]" sap2010:WorkflowViewState.IdRef="If_15">
+                                  <If.Then>
+                                    <ccwa:LogObject sap2010:WorkflowViewState.IdRef="LogObject_1" Object="[validationMessages]" />
+                                  </If.Then>
+                                </If>
+                                <ccwa:LogLine sap2010:WorkflowViewState.IdRef="LogLine_10" Text="[logPrefix+&quot;School Status updated successfully&quot;]" />
+                              </Sequence>
+                            </TryCatch.Try>
+                            <TryCatch.Catches>
+                              <Catch x:TypeArguments="s:Exception" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                <ActivityAction x:TypeArguments="s:Exception">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                  </ActivityAction.Argument>
+                                  <ccwa:LogLine sap2010:WorkflowViewState.IdRef="LogLine_3" Level="Error" Text="[logPrefix+&quot;Exception-&quot;+exception.ToString]" />
+                                </ActivityAction>
+                              </Catch>
+                            </TryCatch.Catches>
+                          </TryCatch>
+                        </Sequence>
+                        <FlowStep.Next>
+                          <FlowStep x:Name="__ReferenceID6" sap2010:WorkflowViewState.IdRef="FlowStep_3">
+                            <Assign sap2010:WorkflowViewState.IdRef="Assign_2">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[reason]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">WorkFlow Executed Successfully</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <FlowStep.Next>
+                              <FlowStep x:Name="__ReferenceID0" sap2010:WorkflowViewState.IdRef="FlowStep_2">
+                                <ccwa:LogLine sap2010:WorkflowViewState.IdRef="LogLine_2" Text="[logPrefix+&quot;***********End of Registered_SchoolStatus_Change workflow***********&quot;+Environment.NewLine+reason.ToString]" />
+                                <FlowStep.Next>
+                                  <FlowStep x:Name="__ReferenceID7" sap2010:WorkflowViewState.IdRef="FlowStep_13">
+                                    <TerminateWorkflow sap2010:WorkflowViewState.IdRef="TerminateWorkflow_3" Reason="[Reason]" />
+                                  </FlowStep>
+                                </FlowStep.Next>
+                              </FlowStep>
+                            </FlowStep.Next>
+                          </FlowStep>
+                        </FlowStep.Next>
+                      </FlowStep>
+                    </FlowStep.Next>
+                  </FlowStep>
+                </FlowDecision.True>
+                <FlowDecision.False>
+                  <FlowStep x:Name="__ReferenceID5" sap2010:WorkflowViewState.IdRef="FlowStep_6">
+                    <Assign sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[reason]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">Not valid status</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <FlowStep.Next>
+                      <x:Reference>__ReferenceID0</x:Reference>
+                    </FlowStep.Next>
+                  </FlowStep>
+                </FlowDecision.False>
+              </FlowDecision>
+            </FlowStep.Next>
+          </FlowStep>
+        </FlowStep.Next>
+      </FlowStep>
+    </Flowchart.StartNode>
+    <x:Reference>__ReferenceID1</x:Reference>
+    <x:Reference>__ReferenceID2</x:Reference>
+    <x:Reference>__ReferenceID3</x:Reference>
+    <x:Reference>__ReferenceID4</x:Reference>
+    <x:Reference>__ReferenceID5</x:Reference>
+    <x:Reference>__ReferenceID0</x:Reference>
+    <x:Reference>__ReferenceID6</x:Reference>
+    <x:Reference>__ReferenceID7</x:Reference>
+    <x:Reference>__ReferenceID8</x:Reference>
+    <sads:DebugSymbol.Symbol>d8kBXFxDbGllbnRcQyRcVXNlcnNca2Vza2lsbGFcc291cmNlXGdpdFxXb3JrZmxvd3NcMDgwNjIwMjBcUmVsZWFzZVxSZWdpc3RlclN0dWRlbnRTdGF0dXNcUmVnaXN0ZXJTdHVkZW50U3RhdXNCeUNvdXJzZVxDbWMuTmV4dXMuU2lzLkFjYWRlbWljcy5TdHVkZW50Q291cnNlX1NhdmVkRXZlbnRfUmVnaXN0ZXJlZFN0dWRlbnRTdGF0dXNCeUNvdXJzZS54YW1sakgDyQIPAgEBSzRLRgIBAlgJYxQDAYYBZg2jARgCAVilAT+lAZQCAgFXrAIVswIeAgFTnAIhnALlAQIBUZ8CJZ8CggECAU6oARXxASACAR70ARmPAiQCAQeSAh2ZAiYCAQNZC1l5AwGOAVoLYRQDAYoBYgtijQEDAYcBZw97GgIBeHwPfKsBAgF0fQ99wgECAW9+D370AQIBbX8PogEoAgFZsQJAsQJQAgFWrgJBrgJJAgFUnAJgnALiAQIBUp8CdZ8CfwIBT6kBF6kBjwECAUuqARfIASICATnJARfvASICASHwARfwAb0CAgEf9QEbjgImAgEIlwJIlwJmAgEGlAJJlAJRAgEEWWhZdgMBjwFfNl+gAQMBjQFcN1xCAwGLAWJKYooBAwGIAWgRaIsBAwGDAWkReSoCAX16EXq6AQIBeXxPfKgBAgF1fV59bAIBcn2kAX2/AQIBcH5PfvEBAgFufzN/pAECAWuFARWfASACAVqpAVepAYwBAgFMqwEZqwGBAwIBSawBGcYBMgIBPMcBGccB5AECATrNARnNAaQCAgE0zgEZ7gEeAgEi8AFX8AG6AgIBIPcBH4ICKgIBDYoCI4oCqgECAQloUWiIAQMBhAFpNWmkAQMBggFvF3YgAgF+elF6twECAXqGAReNASACAWaOAReVASACAWGWARedASACAV2eAReeAdUDAgFbqwFZqwH+AgIBSqwBPawB2AICAUiyAR/DASoCAT3HAVnHAeEBAgE7zQHOAc0B4gECATfNAfUBzQGhAgIBNs0BvAHNAb8BAgE1zgEnzgFJAgEj0AEd7AEoAgEk+wEh+wGbAwIBFfwBIYACJgIBEYECIYECoAECAQ6KAnCKAqcBAgEKdEF0bQMBgQFxQnFOAgF/iwFCiwF/AgFpiAFDiAFfAgFnkwFCkwF/AgFkkAFDkAFfAgFimwFBmwF+AgFgmAFCmAFfAgFengFWngHSAwIBXLMBIboBKgIBQ7sBIcIBKgIBPtEBH+EBOAIBLeIBH+oBOAIBKesBH+sBuQECASX7AWH7AbkBAgEc+wHZAvsB7gICARr7AYID+wGYAwIBGPsBwwH7AeEBAgEX+wGuAvsByAICARb8AS/8AVACARL+ASX+AYMBAgETgQJhgQKdAQIBD7gBS7gBhAECAUa1AUy1AV8CAUTAAUvAAXkCAUG9AUy9AVgCAT/RAUPRAfMBAgEz1wEl3gEuAgEu4gFD4gHHAQIBKusBX+sBtgECASb+AWr+AYABAgEU3AFP3AGIAQIBMdkBUNkBbgIBLw==</sads:DebugSymbol.Symbol>
+  </Flowchart>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="GetWorkflowInstanceId_1" sap:VirtualizedContainerService.HintSize="242,22" />
+      <sap2010:ViewStateData Id="Assign_1" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="LogLine_1" sap:VirtualizedContainerService.HintSize="242,111" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="200,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="LogLine_17" sap:VirtualizedContainerService.HintSize="550,111">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Assign_58" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="ExecuteDataReader_4" sap:VirtualizedContainerService.HintSize="550,312" />
+      <sap2010:ViewStateData Id="LogLine_18" sap:VirtualizedContainerService.HintSize="550,111">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_15" sap:VirtualizedContainerService.HintSize="578,738">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="LogLine_21" sap:VirtualizedContainerService.HintSize="578,111" />
+      <sap2010:ViewStateData Id="GetEntity`1_1" sap:VirtualizedContainerService.HintSize="578,22" />
+      <sap2010:ViewStateData Id="LogLine_22" sap:VirtualizedContainerService.HintSize="578,111" />
+      <sap2010:ViewStateData Id="Assign_12" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Assign_14" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Assign_13" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="LogLine_4" sap:VirtualizedContainerService.HintSize="242,111" />
+      <sap2010:ViewStateData Id="Sequence_7" sap:VirtualizedContainerService.HintSize="264,535">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ExecuteDataReader_1" sap:VirtualizedContainerService.HintSize="578,737">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_4" sap:VirtualizedContainerService.HintSize="200,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="LogLine_13" sap:VirtualizedContainerService.HintSize="214,111" />
+      <sap2010:ViewStateData Id="LogLine_14" sap:VirtualizedContainerService.HintSize="1359,111">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Assign_57" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Assign_61" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="Sequence_17" sap:VirtualizedContainerService.HintSize="264,284">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ExecuteDataReader_3" sap:VirtualizedContainerService.HintSize="1359,486">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="LogLine_20" sap:VirtualizedContainerService.HintSize="1359,111" />
+      <sap2010:ViewStateData Id="Sequence_18" sap:VirtualizedContainerService.HintSize="214,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="LookupReferenceItem_1" sap:VirtualizedContainerService.HintSize="1070,177">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Assign_59" sap:VirtualizedContainerService.HintSize="242,60" />
+      <sap2010:ViewStateData Id="ExecuteDataReader_6" sap:VirtualizedContainerService.HintSize="923,312">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ExecuteDataReader_7" sap:VirtualizedContainerService.HintSize="923,312">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="LogLine_19" sap:VirtualizedContainerService.HintSize="923,111" />
+      <sap2010:ViewStateData Id="Sequence_16" sap:VirtualizedContainerService.HintSize="945,939">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="If_16" sap:VirtualizedContainerService.HintSize="1070,1087">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_19" sap:VirtualizedContainerService.HintSize="214,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="LogLine_15" sap:VirtualizedContainerService.HintSize="214,111" />
+      <sap2010:ViewStateData Id="Sequence_14" sap:VirtualizedContainerService.HintSize="200,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="UpdateStudentStatusToEnrolled_1" sap:VirtualizedContainerService.HintSize="464,231" />
+      <sap2010:ViewStateData Id="LogObject_1" sap:VirtualizedContainerService.HintSize="200,22" />
+      <sap2010:ViewStateData Id="If_15" sap:VirtualizedContainerService.HintSize="464,208" />
+      <sap2010:ViewStateData Id="LogLine_10" sap:VirtualizedContainerService.HintSize="464,111" />
+      <sap2010:ViewStateData Id="Sequence_12" sap:VirtualizedContainerService.HintSize="486,754">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="LogLine_3" sap:VirtualizedContainerService.HintSize="214,111" />
+      <sap2010:ViewStateData Id="Catch`1_1" sap:VirtualizedContainerService.HintSize="490,21">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="TryCatch_1" sap:VirtualizedContainerService.HintSize="504,981">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_6" sap:VirtualizedContainerService.HintSize="200,51">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Assign_2" sap:VirtualizedContainerService.HintSize="242,60">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="LogLine_2" sap:VirtualizedContainerService.HintSize="214,75">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="TerminateWorkflow_3" sap:VirtualizedContainerService.HintSize="200,22">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_13">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">570,719</av:Point>
+            <av:Size x:Key="ShapeSize">200,22</av:Size>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_2">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">563,582.5</av:Point>
+            <av:Size x:Key="ShapeSize">214,75</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">670,657.5 670,719</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_3">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">9,590</av:Point>
+            <av:Size x:Key="ShapeSize">242,60</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">251,620 563,620</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_4">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">30,484.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,51</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">130,535.5 130,590</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_14">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">30,384.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,51</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">130,435.5 130,484.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Assign_3" sap:VirtualizedContainerService.HintSize="242,60">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_6">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">549,450</av:Point>
+            <av:Size x:Key="ShapeSize">242,60</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">670,510 670,582.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowDecision_1" sap:VirtualizedContainerService.HintSize="160,87">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <av:Point x:Key="ShapeLocation">220,246.5</av:Point>
+            <av:Size x:Key="ShapeSize">160,87</av:Size>
+            <av:PointCollection x:Key="FalseConnector">380,290 670,290 670,450</av:PointCollection>
+            <av:PointCollection x:Key="TrueConnector">220,290 130,290 130,384.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_7">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">200,184.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,51</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,235.5 300,246.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="FlowStep_8">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <av:Point x:Key="ShapeLocation">200,104.5</av:Point>
+            <av:Size x:Key="ShapeSize">200,51</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,155.5 300,184.5</av:PointCollection>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Flowchart_1" sap:VirtualizedContainerService.HintSize="884,890">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
+            <av:Size x:Key="ShapeSize">60,75</av:Size>
+            <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,104.5</av:PointCollection>
+            <x:Double x:Key="Width">870</x:Double>
+            <x:Double x:Key="Height">854.5</x:Double>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Registered_SchoolStatusChange_BasedOnCourseStatus_1" sap:VirtualizedContainerService.HintSize="924,970" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
